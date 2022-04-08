@@ -1,6 +1,17 @@
-.image-container-front {
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 80px;
+  padding: 20px;
+  width: 100%;
 }
 
+.imageContainerFront {
+}
+.dynamicImagesFront {
+  height: 250px;
+  width: 100%;
+}
 .hero-front {
   width: 375px;
 }

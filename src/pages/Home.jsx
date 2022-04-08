@@ -2,8 +2,8 @@ import image from "../pictures/Bergen-brygge-pixlr.jpg";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { POPULATE } from "../helpers/api/api";
-import { BASE_URL } from "../helpers/api/api";
+import { POPULATE, BASE_URL } from "../helpers/api/api";
+
 import { format } from "fecha";
 
 const Home = () => {
@@ -29,6 +29,13 @@ const Home = () => {
                         {" "}
                         {attributes.Text}{" "}
                       </h1>
+                    </div>
+                    <div className="imageContainerFront">
+                      <img
+                        className="dynamicImagesFront"
+                        src={attributes.imageUrl}
+                        alt=""
+                      />
                     </div>
 
                     <div>
