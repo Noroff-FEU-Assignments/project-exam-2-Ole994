@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_URL, getData, POPULATE } from "../helpers/api/api";
+import mathallen from "../pictures/mathallen.jpg";
 
 const Detail = ({ attributes }) => {
   const { id } = useParams();
@@ -16,19 +17,16 @@ const Detail = ({ attributes }) => {
   }, []);
   console.log(data);
   return (
-    <div key={id}>
-      <div className="contentContainer">
-        <div className="headingContainer">
-          <h1 className={`heading ${data.name}`}> {data.Text} </h1>
-          <p></p>
+    <div>
+      <div className="detailHero">
+        <h1>Hotellrom</h1>
+      </div>
+      <div key={id}>
+        <div className="detail-name-container">
+          <p className={`name-detail ${data.text}`}> {data.text} </p>
         </div>
-
-        <div className="descriptionContainer">
-          <p className="description"> {data.Description} </p>
-        </div>
-
-        <div className="imageContainer">
-          <img className="muscles" src={data.Image} />
+        <div className="detail-image-container">
+          <img className="hotelRoom" src={data.imageUrl} />
         </div>
 
         <div>
