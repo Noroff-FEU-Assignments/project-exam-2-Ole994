@@ -17,16 +17,44 @@ const Detail = ({ attributes }) => {
   }, []);
   console.log(data);
   return (
-    <div>
+    <div className="detailContainer">
       <div className="detailHero">
-        <h1>Hotellrom</h1>
-      </div>
-      <div key={id}>
-        <div className="detail-name-container">
-          <p className={`name-detail ${data.text}`}> {data.text} </p>
+        <div className="headerDetail">
+          <h1>Hotellrom</h1>
         </div>
-        <div className="detail-image-container">
-          <img className="hotelRoom" src={data.imageUrl} />
+      </div>
+      {""}
+      <div key={id} className="detailWraper">
+        <div className="detail-name-container">
+          <h2 className={`name-detail ${data.text}`}> {data.text} </h2>
+        </div>
+        {""}
+
+        <div className="contentDescription">
+          <div className="detail-image-container">
+            <img className="hotelRoom" src={data.imageUrl} />
+          </div>
+
+          <div className="description-container">
+            <p>
+              Hotellrommene av denne standaren har en nydelig utsikt over
+              Bergens sjarmerende brygge. Her vil du kunne ligge i en
+              dobbeltseng med myke og gode madrasser, med et nattbord som ligger
+              rett ved stikkontakter for å lade mobiltelefoner eller annet
+              elektroiske komponenter du har med deg på din reise.
+            </p>
+            {""}
+            <p>
+              I tillegg vil du på rommet ha tilgang til en god sofa med stoler
+              hvor du kan se på tv og slappe av.{" "}
+            </p>{" "}
+            <p>
+              {" "}
+              Rommene er også innstalert med vannkoker og stuebord med teppe
+              under. Badet har en stor dusj og dobbel vask, med hårføner lett
+              tilgjengelig.
+            </p>
+          </div>
         </div>
 
         <div>

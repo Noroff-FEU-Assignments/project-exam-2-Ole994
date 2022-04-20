@@ -20,17 +20,15 @@ const Home = () => {
     <>
       <div>
         <div className="backgroundImgFront">
-          <img className="heroImgFront" src={image} alt="" />
+          <h1>Bergen</h1>
         </div>
       </div>{" "}
-      <div className="headerFront">
-        <h1>Bergen</h1>
-      </div>
+      <div className="headerFront"></div>
       <div className="container">
         {data.length > 0
           ? data.map(({ attributes, id }) => {
               return (
-                <div key={id}>
+                <div className="singleResult" key={id}>
                   <div className="contentContainer">
                     <div className="headingContainer">
                       <h1 className={`heading ${attributes.text}`}>
@@ -60,6 +58,16 @@ const Home = () => {
           : null}
       </div>
       {/* Data end */}
+      <div className="breakfastContainer">
+        <div className="breakfastDescription">
+          <h2>Restaurant og bar</h2>
+          <p>
+            Vi serverer en stor og smakfull frokost hver morgen for å gi deg
+            best mulig start på dagen. Den er fylt med organisk og sunn frokost
+            varer med noe søte tillegg hvis det skulle la seg friste.
+          </p>
+        </div>
+      </div>
     </>
   );
 };

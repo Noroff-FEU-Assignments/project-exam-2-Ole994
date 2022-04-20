@@ -1,16 +1,69 @@
+.detailContainer {
+}
+
+.headerDetail {
+  display: flex;
+  justify-content: center;
+  h1 {
+    font-size: 60px;
+    margin-top: 40px;
+    color: #2d7b84;
+  }
+}
+.detailHero {
+  background-image: url(../../../pictures/mathallen.jpg);
+  height: 40vh;
+  background-position: center;
+  background-size: cover;
+}
+.detailWraper {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  margin: 20px;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  p {
+    margin: 10px;
+    width: 250px;
+  }
+}
 .hotelRoom {
-  width: 50%;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.singleResult {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 40px;
 }
 .detail-image-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.detail-name-container {
+  padding: 20px;
+}
 
-// .mathallen-img {
-//   width: 100%;
-// }
+@media screen and (min-width: 756px) {
+  .detailHero {
+    height: 60vh;
+  }
 
-.detailHero {
-  background-image: url();
+  .headerDetail {
+    h1 {
+      font-size: 80px;
+    }
+  }
+  .hotelRoom {
+    height: 800px;
+    width: 800px;
+  }
+  .contentDescription {
+    padding: 40px;
+    display: flex;
+    justify-content: space-evenly;
+  }
 }

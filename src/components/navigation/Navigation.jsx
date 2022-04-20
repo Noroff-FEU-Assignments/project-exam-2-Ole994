@@ -1,17 +1,24 @@
 import { Routes, Route, Link } from "react-router-dom";
 import React, { useState } from "react";
+import logo from "../../pictures/logo.svg";
 
 const Navigation = () => {
+  const [isNavExpanded, setIsNavExpanded] = useState(false);
   return (
     <>
       <div>
         <nav>
           <div className="logo-div">
             <a href="/">
-              <img className="logo-img" src="/" alt="" />
+              <img className="logo-img" src={logo} alt="logo" />
             </a>
           </div>{" "}
-          <div className="hamburger">
+          <div
+            className="hamburger"
+            onClick={() => {
+              setIsNavExpanded(!isNavExpanded);
+            }}
+          >
             <div className="line"></div>
             <div className="line"></div>
             <div className="line"></div>
