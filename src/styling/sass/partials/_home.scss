@@ -4,6 +4,9 @@
   background-position: center;
   background-size: cover;
   height: 80vh;
+  // position: absolute;
+  width: 100%;
+  top: 0;
   h1 {
     text-align: center;
     font-size: 80px;
@@ -28,7 +31,7 @@
   flex-direction: column;
   background-color: rgba(255, 255, 255, 0.785);
   width: 60%;
-  height: 200px;
+  height: 300px;
   padding: 1rem;
 }
 
@@ -51,7 +54,7 @@
 .headerFront {
 }
 
-.container {
+.containerHome {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 80px;
@@ -86,7 +89,7 @@
   button {
     background-color: #e38e23;
     border-radius: 6px;
-    color: gold;
+    color: white;
     height: 60px;
     width: 100px;
   }

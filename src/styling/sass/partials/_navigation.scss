@@ -18,9 +18,10 @@ nav {
   display: flex;
   height: 15vh;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  border-bottom: 2px solid rgb(255, 255, 255);
   position: relative;
-  background-color: #46c2d0;
+  background-color: #46c2d070;
+  z-index: 9;
+  width: 100%;
 }
 
 .nav-mobile {

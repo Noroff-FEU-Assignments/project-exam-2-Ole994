@@ -1,0 +1,42 @@
+.containerResult {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 80px;
+  padding: 20px;
+  width: 100%;
+}
+
+.dynamicImagesResult {
+  height: 250px;
+  width: 100%;
+}
+
+.singleResultContainer {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}
+
+.ResultContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.textArea {
+  padding: 20px;
+}
+
+.descriptionContainer {
+  padding: 10px;
+}
+
+.backToDetail {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px;
+  button {
+    color: white;
+    background-color: #7fb1889b;
+    font-size: 30px;
+  }
+}

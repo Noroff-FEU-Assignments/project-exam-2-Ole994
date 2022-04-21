@@ -1,10 +1,29 @@
 @import "home";
 @import "navigation";
 @import "detail";
+@import "result";
+
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Source+Sans+Pro:wght@700&family=Zen+Antique&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Outfit:wght@300&family=Source+Sans+Pro:wght@700&family=Zen+Antique&display=swap");
 * {
   margin: 0;
-  position: relative;
+  // position: relative;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+}
+p {
+  font-size: 1rem;
+  font-family: "Inconsolata", monospace;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Outfit", sans-serif;
+}
+
+.spacer {
+  // height: 70px;
+  margin-bottom: 120px;
 }

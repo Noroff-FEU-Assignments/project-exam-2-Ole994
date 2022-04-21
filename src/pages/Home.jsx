@@ -23,37 +23,38 @@ const Home = () => {
           <h1>Bergen</h1>
         </div>
       </div>{" "}
-      <div className="headerFront"></div>
-      <div className="container">
+      <div className="containerHome">
         {data.length > 0
           ? data.map(({ attributes, id }) => {
-              return (
-                <div className="singleResult" key={id}>
-                  <div className="contentContainer">
-                    <div className="headingContainer">
-                      <h1 className={`heading ${attributes.text}`}>
-                        {" "}
-                        {attributes.text}{" "}
-                      </h1>
-                    </div>
-                    <div className="imageContainerFront">
-                      <img
-                        className="dynamicImagesFront"
-                        src={attributes.imageUrl}
-                        alt=""
-                      />
-                    </div>
+              if (attributes.featured) {
+                return (
+                  <div className="singleResult" key={id}>
+                    <div className="contentContainer">
+                      <div className="headingContainer">
+                        <h2 className={`heading ${attributes.text}`}>
+                          {" "}
+                          {attributes.text}{" "}
+                        </h2>
+                      </div>
+                      <div className="imageContainerFront">
+                        <img
+                          className="dynamicImagesFront"
+                          src={attributes.imageUrl}
+                          alt=""
+                        />
+                      </div>
 
-                    <div>
-                      <div className="detailButton">
-                        <Link to={`/Detail/${id}`}>
-                          <button className="readMore">Les mer</button>
-                        </Link>
+                      <div>
+                        <div className="detailButton">
+                          <Link to={`/Detail/${id}`}>
+                            <button className="readMore">Les mer</button>
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              );
+                );
+              }
             })
           : null}
       </div>

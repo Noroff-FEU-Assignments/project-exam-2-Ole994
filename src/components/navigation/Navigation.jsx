@@ -31,13 +31,11 @@ const Navigation = () => {
               <Link to="/">Home</Link>
             </li>
             {""}
-            <Link to="/Detail"></Link>
             {""}
             <li>
               {" "}
               <Link to="/Contact">Contact</Link>
             </li>{" "}
-            <Link to="/Admin"></Link>
             <li>
               {" "}
               <Link to="/Login">Login</Link>
