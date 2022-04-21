@@ -12,8 +12,6 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Switch,
-  Link,
 } from "react-router-dom";
 //pages
 

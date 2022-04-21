@@ -1,10 +1,8 @@
-import image from "../pictures/Bergen-brygge-pixlr.jpg";
-import breakfast from "../pictures/breakfeast.jpg";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { POPULATE, BASE_URL } from "../helpers/api/api";
-import { format } from "fecha";
+// import { format } from "fecha";
 
 const Home = () => {
   const [data, setData] = useState([]);
