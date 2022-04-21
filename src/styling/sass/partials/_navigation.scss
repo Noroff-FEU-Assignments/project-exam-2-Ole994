@@ -23,6 +23,10 @@ nav {
   background-color: #46c2d0;
 }
 
+.nav-mobile {
+  display: none;
+}
+
 .flex-icon {
 }
 
@@ -80,27 +84,49 @@ nav {
     z-index: 10;
   }
 
-  .nav-links {
-    position: absolute;
-    top: 0;
-    height: 130vh;
-    width: 100%;
+  nav {
+    justify-content: flex-end;
+  }
+  .nav-mobile {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px;
+    align-items: center;
     flex-direction: column;
-    justify-content: center;
-    // padding: 100px;
-    clip-path: circle(500px at 90% -10%);
-    -webkit-clip-path: circle(100px at 100% 10%);
-    transition: all 0.5s ease-out;
-    pointer-events: none;
+    list-style-type: none;
+    height: 70vh;
+    background-color: rgba(0, 0, 0, 0.737);
+    position: absolute;
+    width: 50%;
     z-index: 9;
+    // clip-path: circle(500px at 90% -10%);
+    // -webkit-clip-path: circle(600px at 100% 50%);
+    // transition: all 2s ease-out;
     a {
-      padding: 10px;
-
-      i {
-        // width: 40px;
-      }
+      color: white;
+    }
+    ul {
     }
   }
+  // .nav-links {
+  //   position: absolute;
+  //   top: 0;
+  //   height: 130vh;
+  //   width: 100%;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   // padding: 100px;
+
+  //   pointer-events: none;
+
+  //   a {
+  //     padding: 10px;
+
+  //     i {
+  //       // width: 40px;
+  //     }
+  //   }
+  // }
 
   li {
   }
@@ -145,10 +171,5 @@ nav {
 
   li.fade {
     opacity: 1;
-  }
-
-  //Index media max 700px
-  .featuredProducts {
-    background-color: rgba(0, 0, 0, 0.007);
   }
 }
