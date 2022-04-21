@@ -13,7 +13,7 @@ const Detail = ({ attributes }) => {
       .get(BASE_URL + "/" + id)
       .then((response) => setData(response.data.data.attributes));
     //
-  }, []);
+  }, ["id"]);
   console.log(data);
   return (
     <div className="detailContainer">

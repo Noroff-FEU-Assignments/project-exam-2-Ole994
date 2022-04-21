@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import logo from "../../pictures/logo.svg";
 
@@ -74,9 +74,3 @@ const Navigation = () => {
 };
 
 export default Navigation;
-{
-  /* <div>
-      
-      </div>
-    </div> */
-}
