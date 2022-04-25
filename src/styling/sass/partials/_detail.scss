@@ -53,12 +53,32 @@
     }
   }
   .hotelRoom {
-    height: 800px;
-    width: 800px;
+    height: 50vh;
+    width: 50vh;
   }
   .contentDescription {
     padding: 40px;
     display: flex;
-    justify-content: space-evenly;
+    // justify-content: space-evenly;
+  }
+
+  .detail-image-container {
+    align-items: unset;
+  }
+
+  .contentDescription {
+    padding: 20px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .hotelRoom {
+    height: 90vh;
+    width: 90vh;
+  }
+  .description-container {
+    p {
+      height: 30px;
+    }
   }
 }

@@ -12,7 +12,10 @@ const Result = () => {
   }, []);
   return (
     <>
-      <div></div>
+      <div className="headerResult">
+        <h1>Alle våre hotellrom typer</h1>
+      </div>
+
       <div className="containerResult">
         {data.length > 0
           ? data.map(({ attributes, id }) => {
