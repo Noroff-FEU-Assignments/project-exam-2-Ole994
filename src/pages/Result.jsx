@@ -16,6 +16,13 @@ const Result = () => {
         <h1>Alle våre hotellrom typer</h1>
       </div>
 
+      {/* <div className="filterContainer">
+        <label htmlFor="">
+          Filter
+          <input type="text" placeholder="Ex. Svitte" />
+        </label> */}
+      {/* </div> */}
+
       <div className="containerResult">
         {data.length > 0
           ? data.map(({ attributes, id }) => {

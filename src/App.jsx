@@ -5,6 +5,7 @@ import Admin from "./pages/Admin";
 import Contact from "./pages/Contact";
 import Result from "./pages/Result";
 import Login from "./pages/Login";
+// import Search from "./pages/Search";
 import Navigation from "./components/navigation/Navigation";
 
 import {
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/Admin" element={<Admin />}></Route>
           <Route path="/Login" element={<Login />}></Route>
           <Route path="/Result" element={<Result />}></Route>
+          {/* <Route path="/Search" element={<Search />}></Route> */}
         </Routes>
       </div>
     </Router>

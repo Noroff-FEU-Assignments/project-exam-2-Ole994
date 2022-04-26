@@ -52,7 +52,11 @@ const Detail = ({ attributes }) => {
             </p>
           </div>
         </div>
-
+        <div className="returnButton">
+          <Link to={"/"}>
+            <button>back</button>
+          </Link>
+        </div>
         <div>
           <Link to={`/Detail/${id}`}></Link>
         </div>

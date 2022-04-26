@@ -28,21 +28,21 @@ const Navigation = () => {
             {" "}
             <li>
               {" "}
-              <Link to="/">Home</Link>
+              <Link to="/">Hjem |</Link>
             </li>
             {""}
             {""}
             <li>
               {" "}
-              <Link to="/Contact">Contact</Link>
+              <Link to="/Contact">Kontakt oss |</Link>
             </li>{" "}
             <li>
               {" "}
-              <Link to="/Login">Login</Link>
+              <Link to="/Login">Login |</Link>
             </li>
             <li>
               {" "}
-              <Link to="/Result">Result</Link>
+              <Link to="/Result">Hotellrom |</Link>
             </li>
           </ul>
           {isNavExpanded && (
@@ -50,12 +50,12 @@ const Navigation = () => {
               {" "}
               <li>
                 {" "}
-                <Link to="/">Home</Link>
+                <Link to="/">Hjem</Link>
               </li>
               {""}
               <li>
                 {" "}
-                <Link to="/Contact">Contact</Link>
+                <Link to="/Contact">Kontakt</Link>
               </li>{" "}
               <li>
                 {" "}
@@ -63,8 +63,9 @@ const Navigation = () => {
               </li>
               <li>
                 {" "}
-                <Link to="/Result">Result</Link>
+                <Link to="/Result">Hotelrom</Link>
               </li>
+              {/* <Link to="/Search">Hoom</Link> */}
             </ul>
           )}
         </nav>
