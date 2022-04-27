@@ -10,12 +10,7 @@
     color: #2d7b84;
   }
 }
-.detailHero {
-  background-image: url(../../../pictures/mathallen.jpg);
-  height: 40vh;
-  background-position: center;
-  background-size: cover;
-}
+
 .detailWraper {
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
@@ -69,16 +64,30 @@
   .contentDescription {
     padding: 20px;
   }
+
+  .detail-name-container {
+    display: flex;
+    justify-content: center;
+  }
+  .description-container {
+    height: 30px;
+    font-size: 1.2rem;
+  }
 }
 
 @media screen and (min-width: 900px) {
   .hotelRoom {
-    height: 90vh;
-    width: 90vh;
+    height: 60vh;
+    width: 50vh;
   }
+
   .description-container {
     p {
       height: 30px;
+      font-size: 1.5rem;
+      width: 350px;
     }
+    display: flex;
+    align-items: center;
   }
 }

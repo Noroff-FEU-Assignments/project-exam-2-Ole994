@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { BASE_URL } from "../helpers/api/api";
+import { BASE_URL } from "../../helpers/api/api";
 
 const Detail = ({ attributes }) => {
   const { id } = useParams();
@@ -17,11 +17,10 @@ const Detail = ({ attributes }) => {
   console.log(data);
   return (
     <div className="detailContainer">
-      <div className="detailHero">
-        <div className="headerDetail">
-          <h1>Hotellrom</h1>
-        </div>
+      <div className="headerDetail">
+        <h1>Hotellrom</h1>
       </div>
+
       {""}
       <div key={id} className="detailWraper">
         <div className="detail-name-container">

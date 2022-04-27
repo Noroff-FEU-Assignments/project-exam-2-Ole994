@@ -50,7 +50,7 @@ nav {
 
 .logo-div {
   display: flex;
-  width: 90%;
+  width: 100%;
   align-items: center;
   padding: 20px;
 }
@@ -63,6 +63,9 @@ nav {
 @media screen and (max-width: 756px) {
   .logo-img {
     width: 200px;
+  }
+  .nav-links {
+    display: none;
   }
   .line {
     width: 30px;
@@ -80,6 +83,8 @@ nav {
     position: absolute;
     cursor: pointer;
     right: 0;
+    margin-right: 40px;
+    margin-top: 20px;
     top: 50%;
     transform: translate(-70%, -100%);
     z-index: 10;
@@ -151,25 +156,25 @@ nav {
     font-size: 25px;
   }
 
-  .nav-links li:nth-child(1) {
-    transition: all 0.5s ease 0.2s;
-  }
+  // .nav-links li:nth-child(1) {
+  //   transition: all 0.5s ease 0.2s;
+  // }
 
-  .nav-links li:nth-child(2) {
-    transition: all 0.5s ease 0.4s;
-  }
+  // .nav-links li:nth-child(2) {
+  //   transition: all 0.5s ease 0.4s;
+  // }
 
-  .nav-links li:nth-child(3) {
-    transition: all 0.5s ease 0.6s;
-  }
+  // .nav-links li:nth-child(3) {
+  //   transition: all 0.5s ease 0.6s;
+  // }
 
-  .nav-links li:nth-child(4) {
-    transition: all 0.5s ease 0.8s;
-  }
+  // .nav-links li:nth-child(4) {
+  //   transition: all 0.5s ease 0.8s;
+  // }
 
-  .nav-links li:nth-child(5) {
-    transition: all 0.5s ease 1s;
-  }
+  // .nav-links li:nth-child(5) {
+  //   transition: all 0.5s ease 1s;
+  // }
 
   li.fade {
     opacity: 1;

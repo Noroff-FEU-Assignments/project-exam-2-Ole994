@@ -5,6 +5,54 @@
   object-fit: cover;
   height: 80vh;
   // position: absolute;
-  width: 100%;
+  width: 90%;
   top: 0;
+  display: flex;
+  justify-content: center;
+}
+.loginWrapper {
+  background-color: black;
+}
+.loginForm {
+  display: flex;
+  justify-content: center;
+  color: white;
+  width: 50%;
+}
+.login-button {
+  width: 90px;
+  height: 50px;
+  margin-top: 20px;
+}
+.loginContent {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.flexImg {
+  display: flex;
+  justify-content: center;
+}
+.loginLabel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(26, 79, 112, 0.705);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  margin-top: 10px;
+}
+.email-msg,
+.password-msg {
+  width: 90%;
+}
+.loginInput {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.loginSend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

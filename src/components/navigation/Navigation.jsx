@@ -26,11 +26,14 @@ const Navigation = () => {
           {""}
           <ul className="nav-links">
             {" "}
-            <li>
+            <li
+              onClick={() => {
+                if (isNavExpanded) return false;
+              }}
+            >
               {" "}
               <Link to="/">Hjem |</Link>
             </li>
-            {""}
             {""}
             <li>
               {" "}
