@@ -7,14 +7,22 @@
   // position: absolute;
   width: 100%;
   top: 0;
+}
+.headerFront {
+  padding-top: 130px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
   h1 {
     text-align: center;
     font-size: 80px;
-    padding: 80px;
+    height: 140px;
+    border-radius: 9px;
     color: white;
+    background-color: rgba(0, 0, 0, 0.653);
   }
 }
-
 .breakfastContainer {
   display: flex;
   justify-content: flex-end;
@@ -22,7 +30,7 @@
   background-image: url(../../../pictures/breakfeast.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  height: 500px;
+  height: 1000px;
   object-fit: cover;
 }
 
@@ -30,8 +38,8 @@
   display: flex;
   flex-direction: column;
   background-color: rgba(255, 255, 255, 0.831);
-  width: 60%;
-  height: 300px;
+  width: 40%;
+  height: 50%;
   padding: 1rem;
 }
 
@@ -58,7 +66,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 80px;
-  padding: 20px;
+  padding: 50px;
   width: 100%;
   // position: relative;
   // bottom: 100px;
@@ -101,8 +109,7 @@
 @media screen and (min-width: 756px) {
   .headerFront {
     h1 {
-      font-size: 82px;
-      bottom: 780px;
+      font-size: 9rem;
     }
   }
 
@@ -111,5 +118,22 @@
   }
   .container {
     // margin-top: 300px;
+  }
+  .breakfastDescription {
+    width: 20rem;
+    padding: 20px;
+  }
+
+  .breakfastContainer {
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .backgroundImgFront {
+    h1 {
+      font-size: 16rem;
+      padding-top: 140px;
+    }
   }
 }

@@ -7,6 +7,7 @@ import Contact from "../src/components/pages/Contact";
 import Login from "../src/components/pages/Login";
 import Result from "../src/components/pages/Result";
 import Navigation from "./components/navigation/Navigation";
+import Footer from "./components/navigation/Footer";
 
 import {
   //routes
@@ -31,6 +32,7 @@ const App = () => {
           <Route path="/Result" element={<Result />}></Route>
           {/* <Route path="/Search" element={<Search />}></Route> */}
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

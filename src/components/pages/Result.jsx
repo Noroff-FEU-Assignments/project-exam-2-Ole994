@@ -4,16 +4,8 @@ import { Link } from "react-router-dom";
 import { POPULATE, BASE_URL } from "../../helpers/api/api";
 
 const Result = () => {
-  const [searchInput, setSearchInput] = useState("");
-
-  const searchItems = () => {
-    <input />;
-  };
-
-  const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
   useEffect(() => {
-    setLoading(true);
     axios
 
       .get(BASE_URL + POPULATE)

@@ -5,7 +5,7 @@ export const userLoginSchema = yup.object().shape({
     .string()
     .required("email adresse påkrevd")
     .email(
-      "Du trenger å legge inn medlemsnummeret eller e-postadressen som er registrert på din konto hos oss"
+      "Du trenger å legge inn med e-postadressen som er registrert på din konto hos oss"
     ),
   password: yup.string().required("Passord er påkrevd"),
 });

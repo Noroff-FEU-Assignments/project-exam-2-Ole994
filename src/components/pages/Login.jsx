@@ -1,9 +1,7 @@
 import LoginForm from "../../login/LoginForm";
-//noroff
-//exam2022
 
 //post@olekorvald.no
-
+//Pass1234
 const Login = () => {
   return (
     <>

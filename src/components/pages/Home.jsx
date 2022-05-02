@@ -18,7 +18,9 @@ const Home = () => {
     <>
       <div>
         <div className="backgroundImgFront">
-          <h1>Bergen</h1>
+          <div className="headerFront">
+            <h1>Bergen</h1>
+          </div>
         </div>
       </div>{" "}
       <div className="containerHome">
@@ -38,7 +40,7 @@ const Home = () => {
                         <img
                           className="dynamicImagesFront"
                           src={attributes.imageUrl}
-                          alt=""
+                          alt="Featured hotel rooms"
                         />
                       </div>
 

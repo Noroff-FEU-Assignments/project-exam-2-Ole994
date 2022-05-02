@@ -9,15 +9,20 @@
   top: 0;
   display: flex;
   justify-content: center;
+  background-color: black;
 }
 .loginWrapper {
-  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .loginForm {
   display: flex;
   justify-content: center;
   color: white;
-  width: 50%;
+  align-items: center;
+  width: 100%;
 }
 .login-button {
   width: 90px;
@@ -28,6 +33,10 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.443);
+  height: 70%;
 }
 .flexImg {
   display: flex;
@@ -38,13 +47,13 @@
   flex-direction: column;
   justify-content: center;
   background-color: rgba(26, 79, 112, 0.705);
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
-    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-  margin-top: 10px;
+  box-shadow: rgb(0, 0, 0) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  margin-top: 40px;
+  height: 110px;
 }
 .email-msg,
 .password-msg {
-  width: 90%;
+  text-align: center;
 }
 .loginInput {
   text-align: center;
@@ -55,4 +64,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.login-container {
+  height: 50%;
 }

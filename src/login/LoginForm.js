@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import { userLoginSchema } from "../utils/yupSchemas";
+import { Form, Button } from "react-bootstrap";
 
 const LoginForm = () => {
   // navigation hook
@@ -78,6 +79,9 @@ const LoginForm = () => {
           </div>
           <div className="loginSend">
             <button className="login-button">Send</button>
+          </div>
+          <div className="logout">
+            <button className="logout-button">Logout</button>
           </div>
         </div>
       </form>
