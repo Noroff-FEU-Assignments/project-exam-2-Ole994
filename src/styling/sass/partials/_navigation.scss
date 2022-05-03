@@ -28,9 +28,6 @@ nav {
   display: none;
 }
 
-.flex-icon {
-}
-
 .nav-links {
   display: flex;
   list-style-type: none;
@@ -112,8 +109,6 @@ nav {
       color: white;
       font-size: large;
     }
-    ul {
-    }
   }
   // .nav-links {
   //   position: absolute;
@@ -135,8 +130,6 @@ nav {
   //   }
   // }
 
-  li {
-  }
   .nav-links.open {
     clip-path: circle(990px at 100% -20%);
     -webkit-clip-path: circle(990px at 90%);

@@ -3,70 +3,6 @@ import logo from "../../pictures/logo.svg";
 const Footer = () => {
   return (
     <>
-      {/* <footer className="footer">
-        <div className="l-footer">
-          <h1>
-            <img src={logo} alt="" />
-          </h1>
-          <p>
-            Velkommen til Holidaze, et av Bergens mest utsiktsfylte hotell.{" "}
-          </p>
-        </div>
-        <ul className="r-footer">
-          <li>
-            <h2>Soiale</h2>
-            <ul className="box">
-              <li>
-                <a href="#">Facebook</a>
-              </li>
-              <li>
-                <a href="#">Twitter</a>
-              </li>
-            </ul>
-          </li>
-          <li className="features">
-            <h2>Attraksjoner</h2>
-            <ul className="box h-box">
-              <li>
-                <a href="#">Svømmebasseng</a>
-              </li>
-              <li>
-                <a href="#">Bar</a>
-              </li>
-              <li>
-                <a href="#">kaffè</a>
-              </li>
-              <li>
-                <a href="#"></a>
-              </li>
-              {/* <li>
-                <a href="#">Certifications</a>
-              </li>
-              <li>
-                <a href="#">Customer Service</a>
-              </li> */}
-      {/* </ul>
-          </li> */}
-      {/* <li>
-            <h2>Legal</h2>
-            <ul className="box">
-              <li>
-                <a href="/src/components/pages/Contact.jsx">Privacy Policy</a>
-              </li>
-              <li>
-                <a href="#">Terms of Use</a>
-              </li>
-              <li>
-                <a href="#">Contract</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <div className="b-footer">
-          <p>All rights reserved by ©Holydaze 2022 </p>
-        </div>
-      </footer> */}
-
       <footer>
         <div className="footerHeader">
           <h2>Holidaze</h2>
@@ -112,6 +48,28 @@ const Footer = () => {
                 </li>
                 <li>
                   <a href="/src/components/pages/Detail.jsx">Bestill</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          {""}
+          <div className="r-footer">
+            <div className="attractions">
+              <div className="attractions-header">
+                <h3>Attraksjoner i Bergen</h3>
+              </div>
+              {""}
+              <ul>
+                <li className="attractions-list">
+                  <a href="https://www.akvariet.no/">Akvariet</a>
+                </li>
+                <li className="attractions-list">
+                  <a href="https://www.visitbergen.com/ting-a-gjore/bryggen-i-bergen-p878553">
+                    Besøke bryggen
+                  </a>
+                </li>
+                <li className="attractions-list">
+                  <a href="https://www.floyen.no/">Tur opp Fløyen</a>
                 </li>
               </ul>
             </div>
