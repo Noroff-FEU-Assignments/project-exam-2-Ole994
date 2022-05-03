@@ -16,31 +16,12 @@
   align-items: center;
   h1 {
     text-align: center;
-    font-size: 80px;
-    height: 140px;
+    font-size: 60px;
+    // height: 140px;
     border-radius: 9px;
     color: white;
     background-color: rgba(0, 0, 0, 0.653);
   }
-}
-.breakfastContainer {
-  display: flex;
-  justify-content: flex-end;
-  padding: 2rem;
-  background-image: url(../../../pictures/breakfeast.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 1000px;
-  object-fit: cover;
-}
-
-.breakfastDescription {
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.831);
-  width: 40%;
-  height: 50%;
-  padding: 1rem;
 }
 
 .logo-img {
@@ -54,12 +35,6 @@
 
 .restaurantImg {
   width: 100%;
-}
-
-.dynamicImagesFront {
-}
-
-.headerFront {
 }
 
 .containerHome {
@@ -106,10 +81,35 @@
   font-size: large;
 }
 
+.backgroundBreakfast {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2rem;
+  background-image: url(../../../pictures/breakfeast.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  // object-fit: cover;
+}
+
+.breakfastDescription {
+  // display: flex;
+  // flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.649);
+
+  p,
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.breakfastContainer {
+}
+
 @media screen and (min-width: 756px) {
   .headerFront {
     h1 {
-      font-size: 9rem;
+      font-size: 5rem;
     }
   }
 
@@ -120,7 +120,7 @@
     // margin-top: 300px;
   }
   .breakfastDescription {
-    width: 20rem;
+    width: 70%;
     padding: 20px;
   }
 
@@ -129,11 +129,37 @@
     align-items: center;
   }
 }
+
+@media screen and (min-width: 800px) {
+  .backgroundBreakfast {
+    height: 600px;
+  }
+  .breakfastDescription {
+    height: 45%;
+  }
+}
 @media screen and (min-width: 1200px) {
   .backgroundImgFront {
     h1 {
-      font-size: 16rem;
-      padding-top: 140px;
+      font-size: 8rem;
     }
+  }
+
+  .backgroundBreakfast {
+    height: 1200px;
+  }
+  .breakfastDescription {
+    height: 40%;
+    width: 40%;
+
+    h2 {
+      font-size: 2.5rem;
+    }
+    p {
+      font-size: 2rem;
+    }
+  }
+
+  .breakfastContainer {
   }
 }

@@ -19,7 +19,7 @@ const Home = () => {
       <div>
         <div className="backgroundImgFront">
           <div className="headerFront">
-            <h1>Bergen</h1>
+            <h1>Velkommen til Bergen?</h1>
           </div>
         </div>
       </div>{" "}
@@ -60,13 +60,15 @@ const Home = () => {
       </div>
       {/* Data end */}
       <div className="breakfastContainer">
-        <div className="breakfastDescription">
-          <h2>Restaurant og bar</h2>
-          <p>
-            Vi serverer en stor og smakfull frokost hver morgen for å gi deg
-            best mulig start på dagen. Den er fylt med organisk og sunn frokost
-            varer med noe søte tillegg hvis det skulle la seg friste.
-          </p>
+        <div className="backgroundBreakfast">
+          <div className="breakfastDescription">
+            <h2>Restaurant og bar</h2>
+            <p>
+              Vi serverer en stor og smakfull frokost hver morgen for å gi deg
+              best mulig start på dagen. Den er fylt med organisk og sunn
+              frokost varer med noe søte tillegg hvis det skulle la seg friste.
+            </p>
+          </div>
         </div>
       </div>
     </>
