@@ -32,20 +32,20 @@ const Navigation = () => {
               }}
             >
               {" "}
-              <Link to="/">Hjem |</Link>
+              <Link to="/">Hjem </Link>
             </li>
             {""}
             <li>
               {" "}
-              <Link to="/Contact">Kontakt oss |</Link>
+              <Link to="/Contact">Kontakt oss </Link>
             </li>{" "}
             <li>
               {" "}
-              <Link to="/Login">Login |</Link>
+              <Link to="/Login">Login </Link>
             </li>
             <li>
               {" "}
-              <Link to="/Result">Hotellrom |</Link>
+              <Link to="/Result">Hotellrom </Link>
             </li>
           </ul>
           {isNavExpanded && (

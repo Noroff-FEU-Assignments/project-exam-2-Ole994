@@ -21,6 +21,8 @@
   flex-direction: column;
   p {
     margin: 10px;
+    line-height: 2.5em;
+    margin-right: 50px;
   }
 }
 .hotelRoom {
@@ -37,57 +39,22 @@
   padding: 20px;
 }
 
-@media screen and (min-width: 756px) {
-  .detailHero {
-    height: 60vh;
-  }
-
-  .headerDetail {
-    h1 {
-      font-size: 80px;
+@media screen and (min-width: 700px) {
+  .detailWraper {
+    p {
+      line-height: 1.5em;
+      margin-right: 50px;
     }
-  }
-  .hotelRoom {
-    height: 50vh;
-    width: 50vh;
-  }
-  .contentDescription {
-    padding: 40px;
-    display: flex;
-    // justify-content: space-evenly;
-  }
-
-  .detail-image-container {
-    align-items: unset;
-  }
-
-  .contentDescription {
-    padding: 20px;
-  }
-
-  .detail-name-container {
-    display: flex;
-    justify-content: center;
-  }
-  .description-container {
-    height: 30px;
-    font-size: 1.2rem;
   }
 }
-
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1200px) {
   .hotelRoom {
-    height: 60vh;
-    width: 50vh;
+    height: 800px;
   }
 
-  .description-container {
+  .detailWraper {
     p {
-      height: 30px;
-      font-size: 1.5rem;
-      width: 350px;
+      font-size: 2rem;
     }
-    display: flex;
-    align-items: center;
   }
 }

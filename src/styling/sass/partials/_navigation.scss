@@ -36,6 +36,7 @@ nav {
   align-items: center;
   height: 100%;
   margin-right: 50px;
+  padding: 0;
 }
 .nav-links li a {
   color: white;
@@ -59,7 +60,7 @@ nav {
 /*/ Mediaquery nav /*/
 @media screen and (max-width: 756px) {
   .logo-img {
-    width: 200px;
+    width: 100px;
   }
   .nav-links {
     display: none;

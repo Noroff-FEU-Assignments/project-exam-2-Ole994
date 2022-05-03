@@ -22,3 +22,11 @@ h2,
 h3 {
   font-family: "Outfit", sans-serif;
 }
+
+button {
+  border: 1px solid black;
+}
+button:hover {
+  background-color: white;
+  color: black;
+}
