@@ -1,11 +1,10 @@
 import "./styling/sass/main.scss";
-
-import Home from "../src/components/pages/Home";
-import Detail from "../src/components/pages/Detail";
-import Admin from "../src/components/pages/Admin";
-import Contact from "../src/components/pages/Contact";
-import Login from "../src/components/pages/Login";
-import Result from "../src/components/pages/Result";
+import Home from "../src/pages/Home";
+import Detail from "../src/pages/Detail";
+import Admin from "../src/pages/Admin";
+import Contact from "../src/pages/Contact";
+import Login from "../src/pages/Login";
+import Result from "../src/pages/Result";
 import Navigation from "./components/navigation/Navigation";
 import Footer from "./components/navigation/Footer";
 

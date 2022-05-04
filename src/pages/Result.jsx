@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { POPULATE, BASE_URL } from "../../helpers/api/api";
+import { POPULATE, BASE_URL } from "../helpers/api/api";
 
 const Result = () => {
   const [data, setData] = useState([]);

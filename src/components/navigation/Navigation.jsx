@@ -47,6 +47,9 @@ const Navigation = () => {
               {" "}
               <Link to="/Result">Hotellrom </Link>
             </li>
+            <li>
+              <Link to="/Admin">Admin</Link>
+            </li>
           </ul>
           {isNavExpanded && (
             <ul className="nav-mobile">
@@ -67,6 +70,9 @@ const Navigation = () => {
               <li>
                 {" "}
                 <Link to="/Result">Hotelrom</Link>
+              </li>{" "}
+              <li>
+                <Link to="/Admin">Admin</Link>
               </li>
               {/* <Link to="/Search">Hoom</Link> */}
             </ul>

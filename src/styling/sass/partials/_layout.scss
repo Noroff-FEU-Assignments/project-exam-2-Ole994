@@ -4,6 +4,7 @@
 @import "result";
 @import "login";
 @import "footer";
+@import "contact";
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Source+Sans+Pro:wght@700&family=Zen+Antique&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Outfit:wght@300&family=Source+Sans+Pro:wght@700&family=Zen+Antique&display=swap");
 * {
@@ -17,6 +18,11 @@ p {
   font-family: "Inconsolata", monospace;
 }
 
+label {
+  font-family: "Inconsolata", monospace;
+  color: black;
+}
+
 h1,
 h2,
 h3 {
@@ -27,6 +33,6 @@ button {
   border: 1px solid black;
 }
 button:hover {
-  background-color: white;
+  background-color: black;
   color: black;
 }

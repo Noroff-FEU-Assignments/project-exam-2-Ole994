@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { BASE_URL, POPULATE, api_url } from "../../helpers/api/api";
+import { BASE_URL, POPULATE, api_url } from "../helpers/api/api";
 // import { format } from "fecha";
 
 const Home = () => {

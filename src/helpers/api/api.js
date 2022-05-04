@@ -1,6 +1,8 @@
 import axios from "axios";
 export const BASE_URL = "https://herokuhotels.herokuapp.com/api/hotels";
 export const AUTH_URL = `https://herokuhotels.herokuapp.com/api/auth/local`;
+export const BOOKINGS_URL = `${BASE_URL}api/bookings`;
+export const AUTH_URL_ADMIN = `${BASE_URL}api/auth/local`;
 
 export const BOOKINS_URL = `${BASE_URL}api/bookings`;
 export const POPULATE = "?populate=*";

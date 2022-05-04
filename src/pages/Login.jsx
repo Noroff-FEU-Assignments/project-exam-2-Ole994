@@ -1,4 +1,4 @@
-import LoginForm from "../../login/LoginForm";
+import LoginForm from "../login/LoginForm";
 
 //post@olekorvald.no
 //Pass1234
