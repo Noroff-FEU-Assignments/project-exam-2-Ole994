@@ -1,6 +1,7 @@
 footer {
-  background-color: #47b4c0;
-  //   height: 800px;
+  background-color: #030808cf;
+  margin-top: 20px;
+  color: white;
 
   p {
     font-size: 16px;
@@ -78,6 +79,13 @@ footer {
   align-items: center;
   //   justify-content: space-between;
   flex-direction: column;
+}
+
+.copyRights {
+  background-color: black;
+  h3 {
+    text-align: center;
+  }
 }
 
 @media screen and (min-width: 600px) {

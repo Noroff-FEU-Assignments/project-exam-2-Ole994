@@ -4,9 +4,7 @@ const Footer = () => {
   return (
     <>
       <footer>
-        <div className="footerHeader">
-          <h2>Holidaze</h2>
-        </div>
+        <div className="footerHeader">{/* <h2>Holidaze</h2> */}</div>
         {""}
         {""}
         <div className="footer-container">
@@ -20,9 +18,7 @@ const Footer = () => {
             <div className="about-text-footer">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat
-                nobis repellat veniam, hic corporis officiis ullam laborum
-                cupiditate mollitia. Repellat, esse blanditiis eligendi magnam
-                hic error modi perspiciatis magni illum?
+                nobis repellat veniam,
               </p>
             </div>
           </div>
@@ -74,6 +70,9 @@ const Footer = () => {
               </ul>
             </div>
           </div>
+        </div>
+        <div className="copyRights">
+          <h3>Holidaze</h3>
         </div>
       </footer>
     </>

@@ -174,3 +174,9 @@ nav {
     opacity: 1;
   }
 }
+
+@media screen and (min-width: 1200px) {
+  .nav-links li a {
+    font-size: 30px;
+  }
+}
