@@ -18,7 +18,6 @@ const Footer = () => {
             <div className="about-text-footer">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat
-                nobis repellat veniam,
               </p>
             </div>
           </div>

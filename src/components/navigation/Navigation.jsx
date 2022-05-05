@@ -1,9 +1,18 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import logo from "../../pictures/logo.svg";
+import useNavigate from "react-use-navigate";
+import AuthContext from "../../context/AuthContext";
 
+import { useContext } from "react";
 const Navigation = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
+  const [auth, setAuth] = useContext(AuthContext);
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    setAuth(null);
+    navigate("/login");
+  };
   return (
     <>
       <div>
@@ -40,9 +49,15 @@ const Navigation = () => {
               <Link to="/Contact">Kontakt oss </Link>
             </li>{" "}
             <li>
-              {" "}
-              <Link to="/Login">Login </Link>
+              {!auth ? (
+                <Link to={"/login"}>Login</Link>
+              ) : (
+                <button className="defaultBtn" onClick={handleLogout}>
+                  Logout
+                </button>
+              )}
             </li>
+            {""}
             <li>
               {" "}
               <Link to="/Result">Hotellrom </Link>

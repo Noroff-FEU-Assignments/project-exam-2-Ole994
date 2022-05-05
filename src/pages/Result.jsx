@@ -45,12 +45,9 @@ const Result = () => {
                         </h2>
                         {""}
                         <div className="descriptionContainer">
-                          <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Rem aliquam a quia dolores, exercitationem
-                            asperiores nihil, veniam vero molestiae quibusdam
-                            officia quis expedita voluptas nemo! Odit vitae
-                            numquam nobis officiis.
+                          <p className={`created-result ${data.created_at}`}>
+                            {" "}
+                            {data.created_at}{" "}
                           </p>
                         </div>
                       </div>

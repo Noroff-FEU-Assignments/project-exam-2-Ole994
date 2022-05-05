@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { BASE_URL, POPULATE, api_url } from "../helpers/api/api";
+import { BASE_URL, POPULATE } from "../helpers/api/api";
 // import { format } from "fecha";
 
 const Home = () => {
@@ -19,7 +19,7 @@ const Home = () => {
       <div>
         <div className="backgroundImgFront">
           <div className="headerFront">
-            <h1>Velkommen til Bergen?</h1>
+            <h1>Velkommen til Bergen</h1>
           </div>
         </div>
       </div>{" "}

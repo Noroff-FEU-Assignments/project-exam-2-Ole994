@@ -45,11 +45,18 @@ const Admin = () => {
   // if error object is populated, show user what happened and urge them to login
   if (error) {
     return (
-      <div>
-        <h1>Du må være logget inn for å se innholdet på denne siden</h1>
-        <h3>Error : {error.status}</h3>
-        <p>{error.message}</p>
-        <p>Please Login</p>
+      <div className="div">
+        <div className="error-background">
+          {" "}
+          <h1>Hello</h1>
+        </div>
+        <div className="login-fail-container">
+          <h2>Du må være logget inn for å se innholdet på denne siden</h2>
+
+          <h3>Error : {error.status}</h3>
+          <p>{error.message}</p>
+          <p></p>
+        </div>
       </div>
     );
   }
