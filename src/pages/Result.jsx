@@ -8,7 +8,7 @@ const Result = () => {
   useEffect(() => {
     axios
 
-      .get(BASE_URL + POPULATE)
+      .get(BASE_URL + "api/hotels" + POPULATE)
       .then((response) => setData(response.data.data));
   }, []);
   return (

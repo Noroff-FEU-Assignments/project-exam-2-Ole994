@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { BASE_URL, POPULATE } from "../helpers/api/api";
+import { BASE_URL, POPULATE, BOOKINGS_URL } from "../helpers/api/api";
 // import { format } from "fecha";
 
 const Home = () => {
@@ -9,11 +9,10 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get(BASE_URL + POPULATE)
+      .get(BASE_URL + "api/hotels")
       .then((response) => setData(response.data.data));
   }, []);
-
-  console.log(data);
+  // console.log(BASE_URL, BOOKINGS_URL);
   return (
     <>
       <div>

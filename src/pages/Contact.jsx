@@ -1,6 +1,6 @@
 import BookingsForm from "../admin/BookingsForm";
 import axios from "axios";
-import { HOTELS_URL } from "../helpers/api/api";
+import { BASE_URL, AUTH_URL } from "../helpers/api/api";
 
 const Contact = () => {
   const sendBooking = async (formData) => {
@@ -11,17 +11,17 @@ const Contact = () => {
         contact: formData.contact,
       },
     };
-    const responseData = await axios.post(HOTELS_URL, options);
+    const responseData = await axios.post(AUTH_URL, options);
     console.log(responseData);
   };
 
   return (
-    <>
-      <div className="contactContainer">
-        <h1>Kontakt oss</h1>
-        <BookingsForm sendBooking={sendBooking} />
-      </div>
-    </>
+    <div>
+      <h1>This Page is Public</h1>
+      <p>Anyone can access this page</p>
+      <h3>Send booking:</h3>
+      <BookingsForm sendBooking={sendBooking} />
+    </div>
   );
 };
 

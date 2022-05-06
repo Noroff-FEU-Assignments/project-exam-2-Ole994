@@ -10,7 +10,7 @@ const Detail = ({ attributes }) => {
 
   useEffect(() => {
     axios
-      .get(BASE_URL + "/" + id)
+      .get(BASE_URL + "api/hotels" + "/" + id)
       .then((response) => setData(response.data.data.attributes));
     //
   }, [id]);

@@ -1,6 +1,11 @@
 import { useContext } from "react";
 import { useEffect, useState } from "react";
-import { BOOKINGS_PATH } from "../helpers/api/api";
+import {
+  BOOKINGS_PATH,
+  AUTH_URL_ADMIN,
+  HOTELS_URL,
+  AUTH_URL,
+} from "../helpers/api/api";
 import useToggle from "../hooks/useToogle";
 import useAxios from "../hooks/useAxios";
 import AuthContext from "../context/AuthContext";
@@ -37,7 +42,7 @@ const Admin = () => {
         contact: formData.contact,
       },
     };
-    const responseData = await http.post(BOOKINGS_PATH, options);
+    const responseData = await http.post(options);
     console.log(responseData);
     setIsTriggered();
   };
@@ -45,11 +50,9 @@ const Admin = () => {
   // if error object is populated, show user what happened and urge them to login
   if (error) {
     return (
-      <div className="div">
-        <div className="error-background">
-          {" "}
-          <h1>Hello</h1>
-        </div>
+      <div className="flex">
+        {" "}
+        <h1>Hello</h1>
         <div className="login-fail-container">
           <h2>Du må være logget inn for å se innholdet på denne siden</h2>
 
