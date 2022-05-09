@@ -1,9 +1,9 @@
-import BookingsForm from "../admin/BookingsForm";
+import BookingsForm from "../admin&Login/admin/BookingsForm";
 import axios from "axios";
-import { BASE_URL, AUTH_URL } from "../helpers/api/api";
+import { BOOKINGS_URL } from "../helpers/api/api";
 
 const Contact = () => {
-  const sendBooking = async (formData) => {
+  const sendMsg = async (formData) => {
     const options = {
       data: {
         title: formData.title,
@@ -11,16 +11,16 @@ const Contact = () => {
         contact: formData.contact,
       },
     };
-    const responseData = await axios.post(AUTH_URL, options);
-    console.log(responseData);
+    const responseData = await axios.post(BOOKINGS_URL, options);
+    // console.log(responseData);
   };
 
   return (
     <div>
-      <h1>This Page is Public</h1>
-      <p>Anyone can access this page</p>
-      <h3>Send booking:</h3>
-      <BookingsForm sendBooking={sendBooking} />
+      <h1>Meldinger</h1>
+      <p>Lais</p>
+      <h3>Send melding:</h3>
+      <BookingsForm sendMsg={sendMsg} />
     </div>
   );
 };

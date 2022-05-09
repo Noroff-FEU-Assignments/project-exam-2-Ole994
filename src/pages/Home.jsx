@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { BASE_URL, POPULATE, BOOKINGS_URL } from "../helpers/api/api";
+import { BASE_URL } from "../helpers/api/api";
 // import { format } from "fecha";
 
 const Home = () => {
@@ -19,6 +19,11 @@ const Home = () => {
         <div className="backgroundImgFront">
           <div className="headerFront">
             <h1>Velkommen til Bergen</h1>
+          </div>
+          <div className="viewHotels">
+            <Link to={`/Result`}>
+              <button>Se våres hotellrom</button>
+            </Link>
           </div>
         </div>
       </div>{" "}

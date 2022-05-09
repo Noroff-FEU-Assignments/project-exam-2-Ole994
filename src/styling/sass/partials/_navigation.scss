@@ -17,9 +17,9 @@ button {
 nav {
   display: flex;
   height: 15vh;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   position: relative;
-  background-color: #46c2d0d4;
+  background-color: #516e71;
   z-index: 9;
   width: 100%;
 }
@@ -48,7 +48,7 @@ nav {
 
 .logo-div {
   display: flex;
-  width: 100%;
+  width: 20%;
   align-items: center;
   padding: 20px;
 }
@@ -59,6 +59,10 @@ nav {
 
 /*/ Mediaquery nav /*/
 @media screen and (max-width: 756px) {
+  .logo-div {
+    width: 100%;
+  }
+
   .logo-img {
     width: 100px;
   }

@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { bookingSchema } from "../utils/yupSchemas";
+import { bookingSchema } from "../../utils/yupSchemas";
 
-const BookingsForm = ({ sendBooking }) => {
+const BookingsForm = ({ sendMsg }) => {
   const {
     register,
     handleSubmit,
@@ -14,7 +14,7 @@ const BookingsForm = ({ sendBooking }) => {
   const onSubmit = (formData) => {
     console.log("Form Data: ", formData);
 
-    sendBooking(formData).catch(console.error);
+    sendMsg(formData).catch(console.error);
     alert("Booking gjennomført");
   };
 

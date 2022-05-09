@@ -1,28 +1,19 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { POPULATE, BASE_URL } from "../helpers/api/api";
+import { BASE_URL } from "../helpers/api/api";
 
 const Result = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
 
-      .get(BASE_URL + "api/hotels" + POPULATE)
+      .get(BASE_URL + "api/hotels")
       .then((response) => setData(response.data.data));
   }, []);
   return (
     <>
-      <div className="headerResult">
-        <h1>Alle våre hotellrom typer</h1>
-      </div>
-
-      {/* <div className="filterContainer">
-        <label htmlFor="">
-          Filter
-          <input type="text" placeholder="Ex. Svitte" />
-        </label> */}
-      {/* </div> */}
+      <div className="headerResult"></div>
 
       <div className="containerResult">
         {data.length > 0
@@ -39,13 +30,15 @@ const Result = () => {
                     </div>
                     <div className="textArea">
                       <div className="headingResult">
-                        <h2 className={`headingResult ${attributes.text}`}>
+                        <h1 className={`headingResult ${attributes.text}`}>
                           {" "}
                           {attributes.text}{" "}
-                        </h2>
+                        </h1>
                         {""}
-                        <div className="descriptionContainer">
-                          <p className={`created-result ${data.created_at}`}>
+                        <div className="created-at-wrap">
+                          <p
+                            className={`created-result ${attributes.created_at}`}
+                          >
                             {" "}
                             {data.created_at}{" "}
                           </p>

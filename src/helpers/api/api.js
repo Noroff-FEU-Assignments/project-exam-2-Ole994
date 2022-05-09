@@ -14,4 +14,4 @@ export const BOOKINGS_PATH = BASE_URL + "api/hotels";
 export const getData = (url) => {
   axios.get(url).then((response) => response.data.data);
 };
-export const getHotels = getData(BASE_URL + "/" + POPULATE);
+export const getHotels = getData(BASE_URL + POPULATE);

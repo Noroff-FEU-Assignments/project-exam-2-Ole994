@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import EditBooking from "../components/admin/EditBooking";
+import EditBooking from "../admin&Login/admin/editBookings";
 import useAxios from "../hooks/useAxios";
-import { BOOKINGS_PATH } from "../utils/api";
-import useToggle from "../hooks/useToggle";
+import { BOOKINGS_PATH } from "../helpers/api/api";
+import useToggle from "../hooks/useToogle";
 
 const Booking = () => {
   const { id } = useParams();

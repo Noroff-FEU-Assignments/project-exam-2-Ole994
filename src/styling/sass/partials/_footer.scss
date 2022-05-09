@@ -1,5 +1,5 @@
 footer {
-  background-color: #030808cf;
+  background-color: #516e71;
   margin-top: 20px;
   color: white;
 
@@ -55,6 +55,7 @@ footer {
   // justify-content: center;
   align-items: center;
   flex-direction: column;
+  text-align: center;
   h3 {
     border-bottom: 2px solid rgb(255, 255, 255);
   }
@@ -64,6 +65,7 @@ footer {
   p {
     width: 200px;
     // height: 170px;
+    text-align: center;
   }
 }
 
@@ -82,7 +84,7 @@ footer {
 }
 
 .copyRights {
-  background-color: black;
+  background-color: #6c909482;
   h3 {
     text-align: center;
   }
@@ -94,5 +96,6 @@ footer {
 
   .m-footer {
     justify-content: none;
+    text-align: center;
   }
 }

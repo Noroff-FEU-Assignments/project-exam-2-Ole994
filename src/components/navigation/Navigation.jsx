@@ -63,6 +63,9 @@ const Navigation = () => {
               <Link to="/Result">Hotellrom </Link>
             </li>
             <li>
+              <Link to="/Booking">Book hotellrom</Link>
+            </li>
+            <li>
               <Link to="/Admin">Admin</Link>
             </li>
           </ul>
@@ -86,6 +89,9 @@ const Navigation = () => {
                 {" "}
                 <Link to="/Result">Hotelrom</Link>
               </li>{" "}
+              <li>
+                <Link to="/Enquiry">Book hotellrom</Link>
+              </li>
               <li>
                 <Link to="/Admin">Admin</Link>
               </li>

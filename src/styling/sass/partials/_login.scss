@@ -1,71 +1,97 @@
-.background-hero-login {
-  background-image: url(../../../pictures/login-background.jpeg);
-  // background-position: center;
+.background-login {
+  z-index: -1;
+  background-image: url(../../../pictures/bergen-login-pixlr.jpg);
+  background-position: center;
   background-size: cover;
-  object-fit: cover;
   height: 80vh;
+  display: flex;
+  justify-content: center;
   // position: absolute;
-  width: 90%;
+  p {
+    color: white;
+  }
   top: 0;
-  display: flex;
-  justify-content: center;
-  background-color: black;
 }
-.loginWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
+
 .loginForm {
-  display: flex;
-  justify-content: center;
-  color: white;
-  align-items: center;
-  width: 100%;
-}
-.login-button {
-  width: 90px;
-  height: 50px;
-  margin-top: 20px;
-}
-.loginContent {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.443);
-  height: 70%;
-}
-.flexImg {
-  display: flex;
-  justify-content: center;
-}
-.loginLabel {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: rgba(26, 79, 112, 0.705);
-  box-shadow: rgb(0, 0, 0) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-  margin-top: 40px;
-  height: 110px;
-}
-.email-msg,
-.password-msg {
-  text-align: center;
-}
-.loginInput {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-}
-.loginSend {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.login-container {
-  height: 50%;
+.loginContainer {
+  border: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.484);
+  padding: 20px;
+}
+
+@keyframes popup {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: 400;
+  color: #e7e7e7;
+}
+.input-parent {
+  display: block;
+  margin-bottom: 20px;
+}
+label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #fefefe;
+}
+.input-parent input {
+  padding: 10px 8px;
+  width: 100%;
+  font-size: 16px;
+  background: #323131;
+  border: none;
+  color: #c7c7c7;
+  border-radius: 4px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+.input-parent input:hover {
+  background: white;
+}
+.input-parent input:focus {
+  box-shadow: 0px 0px 0px 1px #0087ff;
+}
+button {
+  padding: 10px 18px;
+  font-size: 15px;
+  background: #1a3969;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  color: #f4f4f4;
+  transition: all 0.2s ease;
+}
+button:hover {
+  opacity: 0.9;
+}
+button:focus {
+  box-shadow: 0px 0px 0px 3px black;
+}
+
+@media screen and (min-width: 900px) {
+  .loginContainer {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    flex-direction: column;
+    align-items: center;
+  }
 }

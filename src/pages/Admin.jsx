@@ -1,28 +1,18 @@
 import { useContext } from "react";
 import { useEffect, useState } from "react";
-import {
-  BOOKINGS_PATH,
-  AUTH_URL_ADMIN,
-  HOTELS_URL,
-  AUTH_URL,
-} from "../helpers/api/api";
+import { BOOKINGS_PATH } from "../helpers/api/api";
 import useToggle from "../hooks/useToogle";
 import useAxios from "../hooks/useAxios";
 import AuthContext from "../context/AuthContext";
-import BookingsForm from "../admin/BookingsForm";
-
-// import BookingCard from "../components/siteBlocks/bookingCard";
+import BookingsForm from "../admin&Login/admin/BookingsForm";
 
 const Admin = () => {
   const [isTriggered, setIsTriggered] = useToggle();
   const [error, setError] = useState();
   const [bookings, setBookings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
   const [auth] = useContext(AuthContext);
-
   const http = useAxios();
-
   useEffect(() => {
     setIsLoading(true);
     const fetchData = async () => {
@@ -33,7 +23,6 @@ const Admin = () => {
 
     fetchData().catch((error) => setError(error.response.data.error));
   }, [isTriggered, auth]);
-
   const sendBooking = async (formData) => {
     const options = {
       data: {
@@ -46,7 +35,6 @@ const Admin = () => {
     console.log(responseData);
     setIsTriggered();
   };
-
   // if error object is populated, show user what happened and urge them to login
   if (error) {
     return (
@@ -55,7 +43,6 @@ const Admin = () => {
         <h1>Hello</h1>
         <div className="login-fail-container">
           <h2>Du må være logget inn for å se innholdet på denne siden</h2>
-
           <h3>Error : {error.status}</h3>
           <p>{error.message}</p>
           <p></p>
@@ -63,23 +50,19 @@ const Admin = () => {
       </div>
     );
   }
-
   if (isLoading) {
     return <div>Loading...</div>;
   }
-
   return (
     <div>
-      <h1>Welcome, {auth.user.username}</h1>
+      {/* <h1>Welcome, {auth.user.username}</h1> */}
       <hr />
       <h2>Bookings List:</h2>
-
       {bookings.map((item, idx) => {
         const deleteBooking = async () => {
           const responseData = await http.delete(`${BOOKINGS_PATH}/${item.id}`);
           console.log(responseData);
         };
-
         const handleDelete = () => {
           if (window.confirm("Are you sure?")) {
             deleteBooking();
@@ -98,7 +81,6 @@ const Admin = () => {
           </div>
         );
       })}
-
       <hr />
       <h2>Manual Booking entry: </h2>
       <BookingsForm sendBooking={sendBooking} />
