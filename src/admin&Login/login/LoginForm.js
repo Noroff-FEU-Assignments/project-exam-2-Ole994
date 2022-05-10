@@ -1,4 +1,3 @@
-import useNavigate from "react-use-navigate";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -6,6 +5,7 @@ import axios from "axios";
 import AuthContext from "../../context/AuthContext";
 import { AUTH_URL } from "../../helpers/api/api";
 import { userLoginSchema } from "../../utils/yupSchemas";
+import { useNavigate } from "react-router-dom";
 
 // import { Form, Button } from "react-bootstrap";
 

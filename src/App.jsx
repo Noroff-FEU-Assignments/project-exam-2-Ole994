@@ -9,6 +9,7 @@ import Result from "../src/pages/Result";
 import Booking from "../src/pages/Booking";
 import Navigation from "./components/navigation/Navigation";
 import Footer from "./components/navigation/Footer";
+import { AuthProvider } from "./context/AuthContext";
 
 import {
   //routes
@@ -20,22 +21,24 @@ import {
 
 const App = () => {
   return (
-    <Router>
-      <div>
-        <Navigation />
-        {""}
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="Detail/:id" element={<Detail />}></Route>
-          <Route path="/Contact" element={<Contact />}></Route>
-          <Route path="/Admin" element={<Admin />}></Route>
-          <Route path="/Login" element={<Login />}></Route>
-          <Route path="/Result" element={<Result />}></Route>
-          <Route path="/Booking" element={<Booking />}></Route>
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <div>
+          <Navigation />
+          {""}
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="Detail/:id" element={<Detail />}></Route>
+            <Route path="/Contact" element={<Contact />}></Route>
+            <Route path="/Admin" element={<Admin />}></Route>
+            <Route path="/Login" element={<Login />}></Route>
+            <Route path="/Result" element={<Result />}></Route>
+            <Route path="/Booking" element={<Booking />}></Route>
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    </AuthProvider>
   );
 };
 

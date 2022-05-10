@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import logo from "../../pictures/logo.svg";
-import useNavigate from "react-use-navigate";
+import { useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 
 import { useContext } from "react";
@@ -11,6 +11,7 @@ const Navigation = () => {
   const navigate = useNavigate();
   const handleLogout = () => {
     setAuth(null);
+
     navigate("/login");
   };
   return (
@@ -58,12 +59,14 @@ const Navigation = () => {
               )}
             </li>
             {""}
+            {""}
+            {/* Mobile */}
             <li>
               {" "}
               <Link to="/Result">Hotellrom </Link>
             </li>
             <li>
-              <Link to="/Booking">Book hotellrom</Link>
+              <Link to="/">Book hotellrom</Link>
             </li>
             <li>
               <Link to="/Admin">Admin</Link>
@@ -83,10 +86,6 @@ const Navigation = () => {
               </li>{" "}
               <li>
                 {" "}
-                <Link to="/Login">Login</Link>
-              </li>
-              <li>
-                {" "}
                 <Link to="/Result">Hotelrom</Link>
               </li>{" "}
               <li>
@@ -95,7 +94,13 @@ const Navigation = () => {
               <li>
                 <Link to="/Admin">Admin</Link>
               </li>
-              {/* <Link to="/Search">Hoom</Link> */}
+              {!auth ? (
+                <Link to={"/login"}>Login</Link>
+              ) : (
+                <li className="logout" onClick={handleLogout}>
+                  Logout
+                </li>
+              )}
             </ul>
           )}
         </nav>
