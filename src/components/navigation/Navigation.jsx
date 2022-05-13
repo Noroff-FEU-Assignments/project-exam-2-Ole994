@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import logo from "../../pictures/logo.svg";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
+import { deleteFromLocalstorage } from "../../utils/helpersLocalStorage";
 
 import { useContext } from "react";
 const Navigation = () => {
@@ -11,6 +12,8 @@ const Navigation = () => {
   const navigate = useNavigate();
   const handleLogout = () => {
     setAuth(null);
+
+    // deleteFromLocalstorage("jwt");
 
     navigate("/login");
   };
@@ -77,25 +80,67 @@ const Navigation = () => {
               {" "}
               <li>
                 {" "}
-                <Link to="/">Hjem</Link>
+                <Link
+                  to="/"
+                  onClick={() => {
+                    setIsNavExpanded(false);
+                  }}
+                >
+                  Hjem
+                </Link>
               </li>
               {""}
               <li>
                 {" "}
-                <Link to="/Contact">Kontakt</Link>
+                <Link
+                  to="/Contact"
+                  onClick={() => {
+                    setIsNavExpanded(false);
+                  }}
+                >
+                  Kontakt
+                </Link>
               </li>{" "}
               <li>
                 {" "}
-                <Link to="/Result">Hotelrom</Link>
+                <Link
+                  to="/Result"
+                  onClick={() => {
+                    setIsNavExpanded(false);
+                  }}
+                >
+                  Hotelrom
+                </Link>
               </li>{" "}
               <li>
-                <Link to="/Enquiry">Book hotellrom</Link>
+                <Link
+                  to="/Booking"
+                  onClick={() => {
+                    setIsNavExpanded(false);
+                  }}
+                >
+                  Book hotellrom
+                </Link>
               </li>
               <li>
-                <Link to="/Admin">Admin</Link>
+                <Link
+                  to="/Admin"
+                  onClick={() => {
+                    setIsNavExpanded(false);
+                  }}
+                >
+                  Admin
+                </Link>
               </li>
               {!auth ? (
-                <Link to={"/login"}>Login</Link>
+                <Link
+                  to={"/login"}
+                  onClick={() => {
+                    setIsNavExpanded(false);
+                  }}
+                >
+                  Login
+                </Link>
               ) : (
                 <li className="logout" onClick={handleLogout}>
                   Logout

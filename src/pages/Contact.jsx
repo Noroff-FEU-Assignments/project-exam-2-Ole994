@@ -1,28 +1,148 @@
-import BookingsForm from "../admin&Login/admin/BookingsForm";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+// import * as yup from "yup";
+import { schema } from "../utils/validation/useHooks";
+
+import { BASE_URL_NEW, BASE_URL } from "../helpers/api/api";
+import { useContext, useState } from "react";
 import axios from "axios";
-import { BOOKINGS_URL } from "../helpers/api/api";
+import useNavigate from "react-use-navigate";
+const url = BASE_URL_NEW;
 
 const Contact = () => {
-  const sendMsg = async (formData) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  function onSubmit(data) {}
+
+  const navigate = useNavigate();
+  const [submitting, setSubmitting] = useState(false);
+  const { loginError, setLogginError } = useState(null);
+
+  const sendMsg = async (data) => {
     const options = {
       data: {
-        title: formData.title,
-        message: formData.message,
-        contact: formData.contact,
+        name: data.name,
+        lastName: data.lastName,
+        email: data.email,
+        message: data.message,
       },
     };
-    const responseData = await axios.post(BOOKINGS_URL, options);
-    // console.log(responseData);
+    const responseData = await axios.post(url, options);
+    console.log(responseData);
   };
 
   return (
-    <div>
-      <h1>Meldinger</h1>
-      <p>Lais</p>
-      <h3>Send melding:</h3>
-      <BookingsForm sendMsg={sendMsg} />
-    </div>
+    <>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        disabled={submitting}
+        className="card"
+      >
+        <div className="row">
+          <div className="col">
+            <div className="form-group">
+              <label>Fornavn</label>
+              <input {...register("title")} placeholder="ex. Ole" />
+              {errors.title && <p>{errors.name.message}</p>}
+            </div>
+          </div>
+
+          <div className="col">
+            <div className="form-group">
+              <label>Etternavn</label>
+              <input {...register("lastName")} placeholder="ex. Nordmann" />
+              {errors.title && <p>{errors.lastName.message}</p>}
+            </div>
+          </div>
+
+          <div className="col">
+            <div className="form-group">
+              <label>Melding</label>
+              <input {...register("message")} placeholder="En melding" />
+              {errors.message && <p>{errors.message.message}</p>}
+            </div>
+          </div>
+
+          <div className="col">
+            <div className="form-group">
+              <label>Email</label>
+              <input {...register("contact")} placeholder="Email.." />
+              {errors.contact && <p>{errors.email.message}</p>}
+            </div>
+          </div>
+
+          {""}
+          <div className="col">
+            <input type="submit" value="Submit" />
+          </div>
+        </div>
+      </form>
+    </>
   );
 };
-
 export default Contact;
+
+// const BookingsForm = ({ sendMsg }) => {
+//   const {
+//     register,
+//     handleSubmit,
+//     formState: { errors },
+//   } = useForm({
+//     resolver: yupResolver(bookingSchema),
+//   });
+
+//   const onSubmit = (formData) => {
+//     console.log("Form Data: ", formData);
+
+//     sendMsg(formData).catch(console.error);
+//     alert("Booking gjennomført");
+//   };
+
+//   return (
+//     <>
+//       <form onSubmit={handleSubmit(onSubmit)} className="card">
+//         <div className="row">
+//           <div className="col">
+//             <div className="form-group">
+//               <label>Fornavn</label>
+//               <input {...register("title")} placeholder="ex. Ole" />
+//               {errors.title && <p>{errors.title.message}</p>}
+//             </div>
+//           </div>
+
+//           <div className="col">
+//             <div className="form-group">
+//               <label>Etternavn</label>
+//               <input {...register("lastName")} placeholder="ex. Nordmann" />
+//               {errors.title && <p>{errors.title.message}</p>}
+//             </div>
+//           </div>
+
+//           <div className="col">
+//             <div className="form-group">
+//               <label>Melding</label>
+//               <input {...register("message")} placeholder="En melding" />
+//               {errors.message && <p>{errors.message.message}</p>}
+//             </div>
+//           </div>
+
+//           <div className="col">
+//             <div className="form-group">
+//               <label>Email</label>
+//               <input {...register("contact")} placeholder="Email.." />
+//               {errors.contact && <p>{errors.contact.message}</p>}
+//             </div>
+//           </div>
+
+//           {""}
+//           <div className="col">
+//             <input type="submit" value="Submit" />
+//           </div>
+//         </div>
+//       </form>
