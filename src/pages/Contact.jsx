@@ -1,12 +1,11 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-// import * as yup from "yup";
+import * as yup from "yup";
 import { schema } from "../utils/validation/useHooks";
-
 import { BASE_URL_NEW, BASE_URL } from "../helpers/api/api";
 import { useContext, useState } from "react";
 import axios from "axios";
-import useNavigate from "react-use-navigate";
+import { useNavigate } from "react-router-dom";
 const url = BASE_URL_NEW;
 
 const Contact = () => {
@@ -18,11 +17,9 @@ const Contact = () => {
     resolver: yupResolver(schema),
   });
 
-  function onSubmit(data) {}
-
   const navigate = useNavigate();
   const [submitting, setSubmitting] = useState(false);
-  const { loginError, setLogginError } = useState(null);
+  // const { loginError, setLogginError } = useState(null);
 
   const sendMsg = async (data) => {
     const options = {
@@ -37,6 +34,10 @@ const Contact = () => {
     console.log(responseData);
   };
 
+  function onSubmit(data) {
+    sendMsg(data);
+  }
+  navigate("/admin");
   return (
     <>
       <form

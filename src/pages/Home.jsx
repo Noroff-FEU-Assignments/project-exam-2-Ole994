@@ -6,13 +6,19 @@ import { BASE_URL } from "../helpers/api/api";
 
 const Home = () => {
   const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     axios
       .get(BASE_URL + "api/hotels")
       .then((response) => setData(response.data.data));
+    setIsLoading(false);
   }, []);
   // console.log(BASE_URL, BOOKINGS_URL);
+  if (isLoading) {
+    <h4>loading</h4>;
+  }
   return (
     <>
       <div>

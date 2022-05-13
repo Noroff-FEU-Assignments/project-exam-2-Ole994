@@ -1,12 +1,7 @@
 import * as yup from "yup";
 
 export const userLoginSchema = yup.object().shape({
-  email: yup
-    .string()
-    .required("email adresse påkrevd")
-    .email(
-      "Du trenger å legge inn med e-postadressen som er registrert på din konto hos oss"
-    ),
+  email: yup.string().required("email adresse påkrevd").email("U"),
   password: yup.string().required("Passord er påkrevd"),
 });
 

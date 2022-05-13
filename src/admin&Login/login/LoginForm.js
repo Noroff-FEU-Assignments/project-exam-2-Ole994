@@ -3,11 +3,10 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
 import AuthContext from "../../context/AuthContext";
-import { AUTH_URL_NEW, AUTH_URL, AUTH_URL_LOCAL } from "../../helpers/api/api";
+import { AUTH_URL_NEW } from "../../helpers/api/api";
+// AUTH_URL, AUTH_URL_LOCAL
 import { userLoginSchema } from "../../utils/yupSchemas";
 import { useNavigate } from "react-router-dom";
-
-// import { Form, Button } from "react-bootstrap";
 
 const LoginForm = () => {
   // navigation hook
