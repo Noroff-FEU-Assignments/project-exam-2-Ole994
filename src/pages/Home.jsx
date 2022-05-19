@@ -13,6 +13,7 @@ const Home = () => {
     axios
       .get(BASE_URL + "api/hotels")
       .then((response) => setData(response.data.data));
+
     setIsLoading(false);
   }, []);
   // console.log(BASE_URL, BOOKINGS_URL);
@@ -49,7 +50,7 @@ const Home = () => {
                       <div className="imageContainerFront">
                         <img
                           className="dynamicImagesFront"
-                          src={attributes.imageUrl}
+                          src={attributes.imgUrl}
                           alt="Featured hotel rooms"
                         />
                       </div>

@@ -22,3 +22,26 @@
     color: black;
   }
 }
+
+.contactAdminContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 80px;
+  padding: 50px;
+  width: 100%;
+}
+
+.contactAdmin {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: rgba(0, 0, 0, 0.034);
+  // color: white;
+  height: 300px;
+}
+.adminName {
+  border-bottom: 1px solid black;
+  width: 100%;
+  text-align: center;
+}

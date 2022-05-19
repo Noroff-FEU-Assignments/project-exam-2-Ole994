@@ -1,47 +1,50 @@
+import { useContext, useState } from "react";
+import useAxios from "../hooks/useAxios";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-
-import { useContext, useState } from "react";
-import axios from "axios";
-import { useEffect } from "react";
-import EditContact from "../admin&Login/admin/EditContact";
 import { contactSchema } from "../utils/validation/useHooks";
-import { CONTACT_PATH } from "../helpers/api/api";
-const url = CONTACT_PATH;
+import { BASE_URL } from "../helpers/api/api";
 
-const Contact = () => {
+
+
+const ContactForm = () => {
+  const http = useAxios();
   const [submitting, setSubmitting] = useState(false);
-  const [loginError, setLoginError] = useState(null);
+  const [postError, setPostError] =  useState(null)
+  const [success, setSuccess] = useState(null)
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
+  const {register, handleSubmit, errors} = useForm({
     resolver: yupResolver(contactSchema),
-  });
+  })
 
-  const onSubmit = async (data) => {
-    const responseData = await axios.post(url, {
-      data: {
-        firstname: data.firstname,
-        lastname: data.lastame,
-        messages: data.messages,
-        email: data.email,
-      },
-    });
-    console.log(responseData);
-    alert("message sent");
-  };
+
+  const onSubmit = async data => {
+    setSubmitting(true)
+    setPostError(null)
+
+    console.log(data)
+    try{
+      const response = await http.post(`${BASE_URL}/contacts`, data);
+    }
+  }
+}
+
+
+
+
+
+
+
+
 
   return (
     <>
-      <form className="card" onSubmit={handleSubmit(onSubmit)}>
+      <form className="card" onSubmit={sendMsg}>
         <div className="row">
           <div className="col">
             <div className="form-group">
               <label>First name</label>
-              <input {...register("firstname")} placeholder="ex. Ole" />
+              <input {...register("name")} placeholder="ex. Ole" />
               {/* {errors.name && (<p {errors.name.messages}></p>)} */}
             </div>
           </div>
@@ -49,21 +52,21 @@ const Contact = () => {
           <div className="col">
             <div className="form-group">
               <label>Last name</label>
-              <input {...register("lastname")} placeholder="ex. Nordmann" />
+              <input placeholder="ex. Nordmann" />
             </div>
           </div>
 
           <div className="col">
             <div className="form-group">
               <label>Message</label>
-              <input {...register("messages")} placeholder="En melding" />
+              <input placeholder="En melding" />
             </div>
           </div>
 
           <div className="col">
             <div className="form-group">
               <label>Email</label>
-              <input {...register("email")} placeholder="Email.." />
+              <input placeholder="Email.." />
             </div>
           </div>
 

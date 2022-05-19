@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { BOOKINGS_PATH_NEW, BOOKINGS_PATH } from "../helpers/api/api";
+import { CONTACT_PATH } from "../helpers/api/api";
 import { useContext } from "react";
 import useToggle from "../hooks/useToogle";
 import useAxios from "../hooks/useAxios";
 import AuthContext from "../context/AuthContext";
+import BookingsForm from "../admin&Login/admin/BookingsForm";
 
 const Admin = () => {
   //set const
@@ -19,7 +20,7 @@ const Admin = () => {
   useEffect(() => {
     setIsLoading(true);
     const fetchData = async () => {
-      const data = await http.get(BOOKINGS_PATH_NEW);
+      const data = await http.get(CONTACT_PATH);
       setBookings(data.data.data);
       setIsLoading(false);
     };
@@ -30,12 +31,12 @@ const Admin = () => {
   const sendBooking = async (formData) => {
     const options = {
       data: {
-        title: formData.title,
+        name: formData.firstname,
         message: formData.message,
         contact: formData.contact,
       },
     };
-    const responseData = await http.post(BOOKINGS_PATH_NEW, options);
+    const responseData = await http.post(CONTACT_PATH, options);
     console.log(responseData);
     setIsTriggered();
   };
@@ -54,15 +55,24 @@ const Admin = () => {
     return <div>Loading</div>;
   }
 
+  if (!auth) {
+    return (
+      <div>
+        <h1>Du må være logget inn for å se denne siden</h1>
+        <Link to="/login">Login</Link>
+      </div>
+    );
+  }
+
   return (
     <div className="bookingContainer">
-      <h1> velkommen til admin siden {auth.user.userName}</h1>
-      <h2>Booking liste:</h2>
+      <h1>Welcome to adminpage {auth.user.userName}</h1>
+      <h2>Messages:</h2>
       <div>
         {bookings.map((item, idx) => {
           const deleteBooking = async () => {
             const responseData = await http.delete(
-              `${BOOKINGS_PATH_NEW}/${item.id}`
+              `${CONTACT_PATH}/${item.id}`
             );
             console.log(responseData);
           };
@@ -76,16 +86,30 @@ const Admin = () => {
             }
           };
           return (
-            <div key={idx}>
-              <h3>{item.attributes.title}</h3>
-              <Link to={`/booking/${item.id}`}>VIEW</Link>
-              <button className="defaultBtn" onClick={handleDelete}>
-                DELETE
-              </button>
+            <div key={idx} className="contactAdminContainer">
+              <div className="contactAdmin">
+                <div className="adminName">
+                  <h3>{item.attributes.firstname}</h3>
+                  <h3>{item.attributes.lastname}</h3>
+                </div>
+                {""}
+                <div className="adminContactStuff">
+                  <p>{item.attributes.messages}</p>
+                  <p>{item.attributes.email}</p>
+                </div>
+                <div className="deleteButton">
+                  <button className="buttonMain" onClick={handleDelete}>
+                    DELETE
+                  </button>
+                </div>
+              </div>
+
+              {/* <Link to={`/booking/${item.id}`}>VIEW</Link> */}
             </div>
           );
         })}
       </div>
+      {/* <BookingsForm sendBooking={sendBooking} /> */}
     </div>
   );
 };

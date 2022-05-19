@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
 import AuthContext from "../../context/AuthContext";
-import { AUTH_URL_NEW } from "../../helpers/api/api";
+import { AUTH_URL } from "../../helpers/api/api";
 // AUTH_URL, AUTH_URL_LOCAL
 import { userLoginSchema } from "../../utils/yupSchemas";
 import { useNavigate } from "react-router-dom";
@@ -25,7 +25,7 @@ const LoginForm = () => {
 
   // Login function, accepts data from YUP object
   const loginUser = async (formData) => {
-    const responseData = await axios.post(AUTH_URL_NEW, {
+    const responseData = await axios.post(AUTH_URL, {
       // use YUP Object data as request body
       identifier: formData.email,
       password: formData.password,

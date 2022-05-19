@@ -24,7 +24,7 @@ const Result = () => {
                     <div className="imageContainerResult">
                       <img
                         className="dynamicImagesResult"
-                        src={attributes.imageUrl}
+                        src={attributes.imgUrl}
                         alt=""
                       />
                     </div>

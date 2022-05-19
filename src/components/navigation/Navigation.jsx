@@ -6,6 +6,7 @@ import AuthContext from "../../context/AuthContext";
 import { deleteFromLocalstorage } from "../../utils/helpersLocalStorage";
 
 import { useContext } from "react";
+import LiveSearchFilter from "../filter/LiveSearchFilter";
 const Navigation = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [auth, setAuth] = useContext(AuthContext);
@@ -45,12 +46,12 @@ const Navigation = () => {
               }}
             >
               {" "}
-              <Link to="/">Hjem </Link>
+              <Link to="/">Home </Link>
             </li>
             {""}
             <li>
               {" "}
-              <Link to="/Contact">Kontakt oss </Link>
+              <Link to="/Contact">Contact </Link>
             </li>{" "}
             <li>
               {!auth ? (
@@ -62,14 +63,12 @@ const Navigation = () => {
               )}
             </li>
             {""}
-            {""}
-            {/* Mobile */}
             <li>
               {" "}
-              <Link to="/Result">Hotellrom </Link>
+              <Link to="/Result">Detail </Link>
             </li>
             <li>
-              <Link to="/">Book hotellrom</Link>
+              <Link to="/Booking">Book hotellrom</Link>
             </li>
             <li>
               <Link to="/Admin">Admin</Link>
@@ -98,7 +97,7 @@ const Navigation = () => {
                     setIsNavExpanded(false);
                   }}
                 >
-                  Kontakt
+                  Contact
                 </Link>
               </li>{" "}
               <li>
@@ -109,7 +108,7 @@ const Navigation = () => {
                     setIsNavExpanded(false);
                   }}
                 >
-                  Hotelrom
+                  Result
                 </Link>
               </li>{" "}
               <li>
@@ -119,7 +118,7 @@ const Navigation = () => {
                     setIsNavExpanded(false);
                   }}
                 >
-                  Book hotellrom
+                  Booking page
                 </Link>
               </li>
               <li>
@@ -149,6 +148,7 @@ const Navigation = () => {
             </ul>
           )}
         </nav>
+        <LiveSearchFilter />
       </div>
     </>
   );

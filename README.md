@@ -1,4 +1,4 @@
-//post@olekorvald.no
+//holidaze@bergen.no
 //Pass1234
 
 # Getting Started with Create React App

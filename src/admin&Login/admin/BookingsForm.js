@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { bookingSchema } from "../../utils/yupSchemas";
 
-const BookingsForm = ({ sendMsg }) => {
+const BookingsForm = ({ sendBooking }) => {
   const {
     register,
     handleSubmit,
@@ -11,16 +11,16 @@ const BookingsForm = ({ sendMsg }) => {
     resolver: yupResolver(bookingSchema),
   });
 
-  const onSubmit = (formData) => {
+  const on = (formData) => {
     console.log("Form Data: ", formData);
 
-    sendMsg(formData).catch(console.error);
+    sendBooking(formData).catch(console.error);
     alert("Booking gjennomført");
   };
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)} className="card">
+      <form onSubmit={handleSubmit(on)} className="card">
         <div className="row">
           <div className="col">
             <div className="form-group">

@@ -32,7 +32,7 @@ const Detail = ({ attributes }) => {
           <div className="detail-image-container">
             <img
               className="hotelRoom"
-              src={data.imageUrl}
+              src={data.imgUrl}
               alt="hotelroom pictures"
             />
           </div>
