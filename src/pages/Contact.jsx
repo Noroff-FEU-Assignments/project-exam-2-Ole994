@@ -1,17 +1,17 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-
 import { useContext, useState } from "react";
 import axios from "axios";
-import { useEffect } from "react";
-import EditContact from "../admin&Login/admin/EditContact";
 import { contactSchema } from "../utils/validation/useHooks";
 import { CONTACT_PATH } from "../helpers/api/api";
+// import { useEffect } from "react";
+// import EditContact from "../admin&Login/admin/EditContact";
+
 const url = CONTACT_PATH;
 
 const Contact = () => {
-  const [submitting, setSubmitting] = useState(false);
-  const [loginError, setLoginError] = useState(null);
+  // const [submitting, setSubmitting] = useState(false);
+  // const [loginError, setLoginError] = useState(null);
 
   const {
     register,
@@ -42,7 +42,7 @@ const Contact = () => {
             <div className="form-group">
               <label>First name</label>
               <input {...register("firstname")} placeholder="ex. Ole" />
-              {/* {errors.name && (<p {errors.name.messages}></p>)} */}
+              {errors.firstname && <span>{errors.firstname.message}</span>}
             </div>
           </div>
 
@@ -50,13 +50,15 @@ const Contact = () => {
             <div className="form-group">
               <label>Last name</label>
               <input {...register("lastname")} placeholder="ex. Nordmann" />
+              {errors.firstname && <span>{errors.firstname.message}</span>}
             </div>
           </div>
 
           <div className="col">
             <div className="form-group">
               <label>Message</label>
-              <input {...register("messages")} placeholder="En melding" />
+              <input {...register("messages")} placeholder="message" />
+              {errors.firstname && <span>{errors.firstname.message}</span>}
             </div>
           </div>
 

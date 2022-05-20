@@ -65,7 +65,7 @@ const Navigation = () => {
             {""}
             <li>
               {" "}
-              <Link to="/Result">Detail </Link>
+              <Link to="/Result">All hotellroms </Link>
             </li>
             <li>
               <Link to="/Booking">Book hotellrom</Link>

@@ -1,5 +1,4 @@
 import * as yup from "yup";
-
 export const userLoginSchema = yup.object().shape({
   email: yup
     .string()
@@ -17,20 +16,42 @@ export const bookingSchema = yup.object().shape({
 });
 
 export const contactSchema = yup.object().shape({
-  email: yup
+  firstname: yup
     .string()
-    .required("Skriv inn dine mail adresse")
-    .email("Please type in a valid email  address"),
-  password: yup
+    .required("please write a valid first name")
+    .min(4, "The last name must be at least 4 characters"),
+
+  lastname: yup
     .string()
-    .required("Vær snill å skriv inn en gyldig email adresse"),
+    .required("please write a valid first name")
+    .min(4, "The last name must be at least 4 characters"),
+
+  messages: yup
+    .string()
+    .required("please write a message")
+    .min(20, "The last message must be at least 20 characters"),
 });
 ////
 
 export const bookingSchemas = yup.object().shape({
-  description: yup.string().required("Write a topic"),
-  checkin: yup.string().required("Choose date for cheick in"),
-  checkout: yup.string().required("Choose date for cheick out"),
+  name: yup
+    .string()
+    .required("please write a valid first name")
+    .min(4, "The last name must be at least 4 characters"),
+
+  lastname: yup
+    .string()
+    .required("vær snill å skriv inn en melding")
+    .min(4, "The last name must be at least 4 characters"),
+
+  description: yup
+    .string()
+    .required("Write a topic")
+    .min(10, "The last name must be at least 10 characters"),
+
+  checkin: yup.string().required("Choose date for check in"),
+
+  checkout: yup.string().required("Choose date for check out"),
   rooms: yup.string().required("Please pick a room"),
   adults: yup.string().required("How many adults will there be?"),
   children: yup.string().required("how many children will there be?"),

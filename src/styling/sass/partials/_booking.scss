@@ -1,0 +1,25 @@
+.bookingContainer {
+  form {
+  }
+  label {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  input {
+  }
+}
+
+.firstName,
+.lastName,
+.checkin,
+.checkout,
+.rooms,
+.adults,
+.children {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
