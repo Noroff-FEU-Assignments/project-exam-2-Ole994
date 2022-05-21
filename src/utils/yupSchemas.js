@@ -23,13 +23,18 @@ export const contactSchema = yup.object().shape({
 
   lastname: yup
     .string()
-    .required("please write a valid first name")
+    .required("please write a valid last name")
     .min(4, "The last name must be at least 4 characters"),
 
   messages: yup
     .string()
     .required("please write a message")
     .min(20, "The last message must be at least 20 characters"),
+
+  email: yup
+    .string()
+    .required("Please enter your email")
+    .email("Please enter a valid email"),
 });
 ////
 
@@ -37,12 +42,12 @@ export const bookingSchemas = yup.object().shape({
   name: yup
     .string()
     .required("please write a valid first name")
-    .min(4, "The last name must be at least 4 characters"),
+    .min(2, "The last name must be at least 4 characters"),
 
   lastname: yup
     .string()
-    .required("vær snill å skriv inn en melding")
-    .min(4, "The last name must be at least 4 characters"),
+    .required("Please type in your last name")
+    .min(2, "The last name must be at least 4 characters"),
 
   description: yup
     .string()

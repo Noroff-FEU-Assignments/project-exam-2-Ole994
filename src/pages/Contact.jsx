@@ -1,13 +1,17 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useContext, useState } from "react";
+// import { useContext, useState } from "react";
 import axios from "axios";
-import { contactSchema } from "../utils/validation/useHooks";
+import { contactSchema } from "../utils/yupSchemas";
+
 import { CONTACT_PATH } from "../helpers/api/api";
 // import { useEffect } from "react";
 // import EditContact from "../admin&Login/admin/EditContact";
 
 const url = CONTACT_PATH;
+
+//på contact siden må jeg fylle ut alle felt for å få booket (supert),
+//men jeg får ingen feilmelding fra yup hvis det ikke er fylt ut riktig
 
 const Contact = () => {
   // const [submitting, setSubmitting] = useState(false);
@@ -42,7 +46,9 @@ const Contact = () => {
             <div className="form-group">
               <label>First name</label>
               <input {...register("firstname")} placeholder="ex. Ole" />
-              {errors.firstname && <span>{errors.firstname.message}</span>}
+              {errors.firstname && (
+                <span className="test">{errors.firstname.message}</span>
+              )}
             </div>
           </div>
 
@@ -50,22 +56,29 @@ const Contact = () => {
             <div className="form-group">
               <label>Last name</label>
               <input {...register("lastname")} placeholder="ex. Nordmann" />
-              {errors.firstname && <span>{errors.firstname.message}</span>}
+              {errors.lastname && <span>{errors.lastname.message}</span>}
             </div>
           </div>
 
           <div className="col">
             <div className="form-group">
               <label>Message</label>
-              <input {...register("messages")} placeholder="message" />
-              {errors.firstname && <span>{errors.firstname.message}</span>}
+              <input
+                {...register("messages")}
+                placeholder="ex. Thank you for the stay, can not wait till next time :) "
+              />
+              {errors.messages && <span>{errors.messages.message}</span>}
             </div>
           </div>
 
           <div className="col">
             <div className="form-group">
               <label>Email</label>
-              <input {...register("email")} placeholder="Email.." />
+              <input
+                {...register("email")}
+                placeholder="ex. hotel@example.no.."
+              />
+              {errors.email && <span>{errors.email.message}</span>}
             </div>
           </div>
 

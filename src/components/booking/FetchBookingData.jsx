@@ -6,6 +6,13 @@ import useToggle from "../../hooks/useToogle";
 import useAxios from "../../hooks/useAxios";
 import AuthContext from "../../context/AuthContext";
 
+// Jeg får ikke hentet all data fra apiet og displayet det på admin siden
+//
+//
+//
+//
+//
+
 export const FetchBookingData = () => {
   const [isTriggered, setIsTriggered] = useToggle();
   const [error, setError] = useState();
