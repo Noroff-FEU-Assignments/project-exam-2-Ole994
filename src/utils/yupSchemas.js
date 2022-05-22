@@ -19,7 +19,7 @@ export const contactSchema = yup.object().shape({
   firstname: yup
     .string()
     .required("please write a valid first name")
-    .min(4, "The last name must be at least 4 characters"),
+    .min(3, "The last name must be at least 4 characters"),
 
   lastname: yup
     .string()
@@ -29,7 +29,7 @@ export const contactSchema = yup.object().shape({
   messages: yup
     .string()
     .required("please write a message")
-    .min(20, "The last message must be at least 20 characters"),
+    .min(10, "The last message must be at least 10 characters"),
 
   email: yup
     .string()

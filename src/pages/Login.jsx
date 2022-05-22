@@ -1,7 +1,4 @@
-import LoginForm from "../admin&Login/login/LoginForm";
-
-//post@olekorvald.no
-//Pass1234
+import LoginForm from "../components/login/LoginForm";
 
 const Login = () => {
   return (

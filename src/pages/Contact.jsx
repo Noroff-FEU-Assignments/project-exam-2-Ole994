@@ -47,7 +47,9 @@ const Contact = () => {
               <label>First name</label>
               <input {...register("firstname")} placeholder="ex. Ole" />
               {errors.firstname && (
-                <span className="test">{errors.firstname.message}</span>
+                <span className="error-message">
+                  {errors.firstname.message}
+                </span>
               )}
             </div>
           </div>
@@ -56,7 +58,9 @@ const Contact = () => {
             <div className="form-group">
               <label>Last name</label>
               <input {...register("lastname")} placeholder="ex. Nordmann" />
-              {errors.lastname && <span>{errors.lastname.message}</span>}
+              {errors.lastname && (
+                <span className="error-message">{errors.lastname.message}</span>
+              )}
             </div>
           </div>
 
@@ -67,7 +71,9 @@ const Contact = () => {
                 {...register("messages")}
                 placeholder="ex. Thank you for the stay, can not wait till next time :) "
               />
-              {errors.messages && <span>{errors.messages.message}</span>}
+              {errors.messages && (
+                <span className="error-message">{errors.messages.message}</span>
+              )}
             </div>
           </div>
 
@@ -78,7 +84,9 @@ const Contact = () => {
                 {...register("email")}
                 placeholder="ex. hotel@example.no.."
               />
-              {errors.email && <span>{errors.email.message}</span>}
+              {errors.email && (
+                <span className="error-message">{errors.email.message}</span>
+              )}
             </div>
           </div>
 
@@ -88,7 +96,6 @@ const Contact = () => {
           </div>
         </div>
       </form>
-      {/* <EditContact /> */}
     </>
   );
 };

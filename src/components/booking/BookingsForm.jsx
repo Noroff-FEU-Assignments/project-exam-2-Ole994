@@ -1,21 +1,9 @@
 import { useForm } from "react-hook-form";
-// description: yup.string().required("Write a topic"),s
 import { yupResolver } from "@hookform/resolvers/yup";
 import { bookingSchemas } from "../../utils/yupSchemas";
 import axios from "axios";
 import { BOOKING_PATH } from "../../helpers/api/api";
 const url = BOOKING_PATH;
-// Url for booking path = https://fast-tor-53724.herokuapp.com/api/bookings
-//brukernavn til strapi = ole.korvald1994@gmail.com
-//passord til strapi = Pass1234
-
-//firsname
-//lasname
-// checkin
-//checout
-//rooms
-//adults
-//children
 
 // Selv om jeg prøver å fylle ut alle feltene på bookingsiden
 // vil jeg få en error på checkout, room, adults og children
@@ -51,8 +39,8 @@ export const BookingsForm = ({}) => {
 
   return (
     <>
-      <div className="bookingContainer">
-        <form className="bookingForm" onSubmit={handleSubmit(bookingSubmit)}>
+      <form className="bookingForm" onSubmit={handleSubmit(bookingSubmit)}>
+        <div className="bookingContainer">
           <div className="firstName">
             <label>
               First name
@@ -78,14 +66,14 @@ export const BookingsForm = ({}) => {
           <div className="checkin">
             <label>
               checkin
-              <input {...register("checkin")} type="date" />
+              <input {...register("checkin")} type="text" />
               {errors.checkin && <span>{errors.checkin.message}</span>}
             </label>
           </div>
           <div className="checkout">
             <label>
               checkout
-              <input {...register("checkout")} type="date" name="" id="" />
+              <input {...register("checkout")} type="text" name="" id="" />
               {errors.checkout && <span>{errors.checkout.message}</span>}
             </label>
           </div>
@@ -122,9 +110,9 @@ export const BookingsForm = ({}) => {
             <button type="submit" value="submit">
               Submit
             </button>
-          </div>
-        </form>
-      </div>
+          </div>{" "}
+        </div>
+      </form>
     </>
   );
 };

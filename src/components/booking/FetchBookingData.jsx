@@ -92,8 +92,13 @@ export const FetchBookingData = () => {
             <div key={idx} className="contactAdminContainer">
               <div className="contactAdmin">
                 <div className="adminName">
-                  <h3>{item.attributes.firstname}</h3>
+                  <h3>{item.attributes.name}</h3>
                   <h3>{item.attributes.lastname}</h3>
+                  <h3>{item.attributes.checkin}</h3>
+                  <h3>{item.attributes.checkout}</h3>
+                  <h3>{item.attributes.rooms}</h3>
+                  <h3>{item.attributes.children}</h3>
+                  <h3>{item.attributes.adults}</h3>
                 </div>
                 {""}
                 <div className="adminContactStuff">

@@ -1,3 +1,4 @@
+//Username and password for login:
 //holidaze@bergen.no
 //Pass1234
 

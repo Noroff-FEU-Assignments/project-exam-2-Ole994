@@ -120,5 +120,19 @@
     width: 100%;
   }
 }
+
+.error-message {
+  color: red;
+  position: absolute;
+  margin-top: 50px;
+}
+
+.card {
+  h2 {
+    color: black;
+    font-size: 60px;
+    text-transform: uppercase;
+  }
+}
 @media screen and (min-width: 900px) {
 }
