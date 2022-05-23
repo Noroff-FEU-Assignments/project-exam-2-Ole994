@@ -1,13 +1,26 @@
-.bookingContainer {
-  form {
+.bookingWrap {
+  z-index: -1;
+  background-image: url(../../../pictures/ullriken.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 80vh;
+
+  span {
+    color: red;
   }
+
   label {
-    color: black;
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 30%;
   }
   input {
+  }
+}
+
+.bookingWrap {
+  h1 {
+    text-align: center;
   }
 }
 
@@ -22,4 +35,12 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.bookingForm {
+  background-color: rgba(0, 0, 0, 0.516);
+  color: white;
+  margin-top: 50px;
+}
+.inputBooking {
+  color: black;
 }

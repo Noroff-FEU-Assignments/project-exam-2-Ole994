@@ -1,15 +1,15 @@
+import BookingsFetch from "../components/booking/BookingsFetch";
 import FetchContactData from "../components/contact/FetchContactData";
-import FetchBookingData from "../components/booking/FetchBookingData";
 
-const Admin = () => {
+export const Admin = () => {
   return (
     <>
-      {" "}
-      <div></div>
-      <FetchBookingData />
-      <FetchContactData />
+      <BookingsFetch></BookingsFetch>
+      <FetchContactData></FetchContactData>
     </>
   );
 };
+
+//bookings
 
 export default Admin;

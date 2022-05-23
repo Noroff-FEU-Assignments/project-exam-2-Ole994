@@ -3,24 +3,15 @@ import { yupResolver } from "@hookform/resolvers/yup";
 // import { useContext, useState } from "react";
 import axios from "axios";
 import { contactSchema } from "../utils/yupSchemas";
-
 import { CONTACT_PATH } from "../helpers/api/api";
-// import { useEffect } from "react";
-// import EditContact from "../admin&Login/admin/EditContact";
-
 const url = CONTACT_PATH;
 
-//på contact siden må jeg fylle ut alle felt for å få booket (supert),
-//men jeg får ingen feilmelding fra yup hvis det ikke er fylt ut riktig
-
 const Contact = () => {
-  // const [submitting, setSubmitting] = useState(false);
-  // const [loginError, setLoginError] = useState(null);
-
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({
     resolver: yupResolver(contactSchema),
   });
@@ -35,6 +26,7 @@ const Contact = () => {
       },
     });
     console.log(responseData);
+    reset();
     alert("message sent");
   };
 
@@ -96,6 +88,7 @@ const Contact = () => {
           </div>
         </div>
       </form>
+      {/* <EditContact /> */}
     </>
   );
 };

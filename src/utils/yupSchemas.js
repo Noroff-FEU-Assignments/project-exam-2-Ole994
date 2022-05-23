@@ -39,26 +39,22 @@ export const contactSchema = yup.object().shape({
 ////
 
 export const bookingSchemas = yup.object().shape({
-  name: yup
-    .string()
-    .required("please write a valid first name")
-    .min(2, "The last name must be at least 4 characters"),
-
-  lastname: yup
-    .string()
-    .required("Please type in your last name")
-    .min(2, "The last name must be at least 4 characters"),
-
-  description: yup
-    .string()
-    .required("Write a topic")
-    .min(10, "The last name must be at least 10 characters"),
-
-  checkin: yup.string().required("Choose date for check in"),
-
-  checkout: yup.string().required("Choose date for check out"),
-  rooms: yup.string().required("Please pick a room"),
-  adults: yup.string().required("How many adults will there be?"),
-  children: yup.string().required("how many children will there be?"),
-  message: yup.string().required("vær snill å skriv inn en melding"),
+  // name: yup
+  //   .string()
+  //   .required("please write a valid first name")
+  //   .min(2, "The last name must be at least 4 characters"),
+  // lastname: yup
+  //   .string()
+  //   .required("Please type in your last name")
+  //   .min(2, "The last name must be at least 4 characters"),
+  // description: yup
+  //   .string()
+  //   .required("Write a topic")
+  //   .min(10, "The last name must be at least 10 characters"),
+  // checkin: yup.string().required("Choose date for check in"),
+  // checkout: yup.string().required("Choose date for check out"),
+  // rooms: yup.string().required("Please pick a room"),
+  // adults: yup.string().required("How many adults will there be?"),
+  // children: yup.string().required("how many children will there be?"),
+  // message: yup.string().required("vær snill å skriv inn en melding"),
 });

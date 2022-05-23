@@ -30,6 +30,7 @@ export const FetchContactData = () => {
     const options = {
       data: {
         name: formData.firstname,
+        lastname: formData.lasttname,
         message: formData.message,
         contact: formData.contact,
       },

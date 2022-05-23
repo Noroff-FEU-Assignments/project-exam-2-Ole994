@@ -1,133 +1,231 @@
+import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { bookingSchemas } from "../../utils/yupSchemas";
-import axios from "axios";
 import { BOOKING_PATH } from "../../helpers/api/api";
-const url = BOOKING_PATH;
+import axios from "axios";
 
-// Selv om jeg prøver å fylle ut alle feltene på bookingsiden
-// vil jeg få en error på checkout, room, adults og children
-// når jeg har fylt ut dette
-//
-//
-//
-
-export const BookingsForm = ({}) => {
+export const BookingForm = ({}) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
-    resolver: yupResolver(bookingSchemas),
-  });
+    reset,
+  } = useForm({ resolver: yupResolver(bookingSchemas) });
 
-  const bookingSubmit = async (data) => {
-    const responseData = await axios.post(url, {
+  const onFormSubmit = async (data) => {
+    console.log("response data before post:", { data });
+    const response = await axios.post(BOOKING_PATH, {
       data: {
+        name: data.name,
         checkin: data.checkin,
         checkout: data.checkout,
         rooms: data.rooms,
         adults: data.adults,
         children: data.children,
-        name: data.name,
-        lastname: data.lastname,
       },
     });
-    console.log(responseData);
-    alert("booking made");
+    console.log("response data after post:", response.data);
+    reset();
   };
 
   return (
-    <>
-      <form className="bookingForm" onSubmit={handleSubmit(bookingSubmit)}>
-        <div className="bookingContainer">
-          <div className="firstName">
-            <label>
-              First name
-              <input
-                {...register("name")}
-                type="Your firstname"
-                placeholder="first name"
-              />
-              {errors.name && <span>{errors.name.message}</span>}
-            </label>
+    <form className="card" onSubmit={handleSubmit(onFormSubmit)}>
+      <div className="row">
+        <div className="col">
+          <div className="">
+            <label>First name</label>
+            <input
+              {...register("name")}
+              placeholder="Name"
+              type="text"
+              required
+            />
+            <p>{errors.name?.message}</p>
+            <br />
           </div>
-          <div className="lastName">
-            <label>
-              last name
-              <input
-                {...register("lastname")}
-                type="your lastname"
-                placeholder="Last name"
-              />
-              {errors.lastname && <span>{errors.lastname.message}</span>}
-            </label>
-          </div>
-          <div className="checkin">
-            <label>
-              checkin
-              <input {...register("checkin")} type="text" />
-              {errors.checkin && <span>{errors.checkin.message}</span>}
-            </label>
-          </div>
-          <div className="checkout">
-            <label>
-              checkout
-              <input {...register("checkout")} type="text" name="" id="" />
-              {errors.checkout && <span>{errors.checkout.message}</span>}
-            </label>
-          </div>
-          <div className="rooms">
-            <select name="" id="">
-              <option {...register("rooms")} value=""></option>
-              <option value="">one bed</option>
-              <option value="">rwo beds</option>
-              <option value="">three beds</option>
-            </select>
-            {errors.rooms && <span>{errors.rooms.message}</span>}
-          </div>
-          <div className="children">
-            <select {...register("rooms")} name="" id="">
-              {" "}
-              <option value=""></option>
-              <option value="">one child</option>
-              <option value="">two children</option>
-              <option value="">three children</option>
-            </select>
-            {errors.children && <span>{errors.children.message}</span>}
-          </div>
-          <div className="adults">
-            <select {...register("adults")} name="" id="">
-              {" "}
-              <option value=""></option>
-              <option value="">one adult</option>
-              <option value="">two adults </option>
-              <option value="">three adults</option>
-            </select>
-            {errors.adults && <span>{errors.adults.message}</span>}
-          </div>
-          <div className="bookingSub">
-            <button type="submit" value="submit">
-              Submit
-            </button>
-          </div>{" "}
         </div>
-      </form>
-    </>
+
+        <div className="col">
+          <div className="">
+            <label>Last name</label>
+            <input
+              {...register("checkin")}
+              placeholder="Check in"
+              type="date"
+              required
+            />
+            <p>{errors.checkin?.message}</p>
+
+            <br />
+          </div>
+        </div>
+
+        <div className="col">
+          <div className="">
+            <label>checkout</label>
+            <input
+              {...register("checkout")}
+              placeholder="Check out"
+              type="date"
+              required
+            />
+            <p>{errors.checkout?.message}</p>
+            <br />
+          </div>
+        </div>
+
+        <div className="col">
+          <div className="">
+            <label>rooms</label>
+            <input
+              {...register("rooms")}
+              placeholder="Rooms"
+              type="text"
+              required
+            />
+            <p>{errors.rooms?.message}</p>
+            <br />
+          </div>
+        </div>
+
+        <div className="col">
+          <div className="">
+            <label>adults</label>
+            <input
+              {...register("adults")}
+              placeholder="Number of adults"
+              type="text"
+              required
+            />
+            <p>{errors.adults?.message}</p>
+            <br />
+
+            <input
+              {...register("children")}
+              placeholder="Number of children"
+              type="text"
+              required
+            />
+            <p>{errors.children?.message}</p>
+            <br />
+          </div>
+        </div>
+
+        <input
+          {...register("adults")}
+          placeholder="Number of adults"
+          type="text"
+          required
+        />
+        <p>{errors.adults?.message}</p>
+        <br />
+
+        <input
+          {...register("children")}
+          placeholder="Number of children"
+          type="text"
+          required
+        />
+        <p>{errors.children?.message}</p>
+        <br />
+
+        {""}
+      </div>
+      <button type="submit" value="submit">
+        Book
+      </button>
+    </form>
   );
 };
 
-export default BookingsForm;
+export default BookingForm;
 
-{
-  /* <select
-            {...register("beds")}
-            onChange={(e) =>
-              setValue("select", e.target.value, { shouldValidate: true })
-            }
-          >
-            <option value="">How many beds ?</option>
-            <option value="one bed">One Bed</option>
-            <option value="two beds">Two Beds</option>
-            <option value="three beds">Three Beds</option> */
-}
+// import React from "react";
+// import { useForm } from "react-hook-form";
+
+// import { yupResolver } from "@hookform/resolvers/yup";
+// import { bookingSchemas } from "../../utils/yupSchemas";
+// import { BOOKING_PATH } from "../../helpers/api/api";
+// import axios from "axios";
+
+// export const BookingForm = ({}) => {
+//   const {
+//     register,
+//     handleSubmit,
+//     formState: { errors },
+//     reset,
+//   } = useForm({ resolver: yupResolver(bookingSchemas) });
+
+//   const onFormSubmit = async (data) => {
+//     console.log("response data before post:", { data });
+//     const response = await axios.post(BOOKING_PATH, {
+//       data: {
+//         name: data.name,
+//         checkin: data.checkin,
+//         checkout: data.checkout,
+//         rooms: data.rooms,
+//         adults: data.adults,
+//         children: data.children,
+//       },
+//     });
+//     console.log("response data after post:", response.data);
+//     reset();
+//   };
+
+//   return (
+//     <form onSubmit={handleSubmit(onFormSubmit)}>
+//       <h2>Book your room today</h2>
+//       <br />
+
+//       <input {...register("name")} placeholder="Name" type="text" required />
+//       <p>{errors.name?.message}</p>
+//       <br />
+
+//       <input
+//         {...register("checkin")}
+//         placeholder="Check in"
+//         type="date"
+//         required
+//       />
+//       <p>{errors.checkin?.message}</p>
+
+//       <br />
+
+//       <input
+//         {...register("checkout")}
+//         placeholder="Check out"
+//         type="date"
+//         required
+//       />
+//       <p>{errors.checkout?.message}</p>
+//       <br />
+
+//       <input {...register("rooms")} placeholder="Rooms" type="text" required />
+//       <p>{errors.rooms?.message}</p>
+//       <br />
+
+//       <input
+//         {...register("adults")}
+//         placeholder="Number of adults"
+//         type="text"
+//         required
+//       />
+//       <p>{errors.adults?.message}</p>
+//       <br />
+
+//       <input
+//         {...register("children")}
+//         placeholder="Number of children"
+//         type="text"
+//         required
+//       />
+//       <p>{errors.children?.message}</p>
+//       <br />
+
+//       <button type="submit">Book</button>
+//     </form>
+//   );
+// };
+
+// export default BookingForm;

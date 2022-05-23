@@ -9,7 +9,6 @@ import BookingsForm from "../components/booking/BookingsForm";
 const Booking = () => {
   return (
     <div>
-      Booking
       <BookingsForm />;
     </div>
   );
