@@ -74,12 +74,12 @@ const BookingsFetch = () => {
           return (
             <div key={idx} className="contactAdminContainer">
               <div className="contactAdmin">
-                <div className="adminName">heiLatest booking</div>
+                <div className="adminName">Latest booking</div>
                 {""}
                 <div className="bookingResult">
                   <p>Name: {item.attributes.name}</p>
-                  <p>Checkin: {item.attributes.checkin}</p>
-                  <p>Checkout:{item.attributes.checkout}</p>
+                  <p>Checkin: {item.attributes.checkin.substring(0, 10)}</p>
+                  <p>Checkout:{item.attributes.checkout.substring(0, 10)}</p>
                   <p>Rooms: {item.attributes.rooms}</p>
                   <p>Adults:{item.attributes.adults}</p>
                   <p>Children: {item.attributes.children}</p>

@@ -1,46 +1,49 @@
-.bookingHero {
-  z-index: -1;
+.backgroundBooking {
   background-image: url(../../../pictures/ullriken.jpg);
   background-position: center;
   background-size: cover;
-  height: 60vh;
-
-  span {
-    color: red;
-  }
-
-  label {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-  }
-  input {
-  }
+  height: 80vh;
 }
 
 .bookingWrap {
-  h1 {
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+
+  input {
+    width: 50%;
+    height: 50px;
+  }
+
+  button {
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 }
 
-.firstName,
-.lastName,
-.checkin,
-.checkout,
-.rooms,
-.adults,
-.children {
+.bookingForm {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.747);
+  width: 100%;
+  margin-top: 150px;
 }
-.bookingForm {
-  background-color: rgba(0, 0, 0, 0.516);
-  color: white;
-  margin-top: 50px;
+.bookingSubmit {
+  width: 200px;
 }
-.inputBooking {
-  color: black;
+
+.error-message-booking {
+  text-align: center;
+
+  color: rgb(255, 148, 148);
+  padding: 10px;
+}
+@media screen and (min-width: 900px) {
+  .bookingForm {
+    width: 40%;
+    margin-top: 300px;
+  }
 }

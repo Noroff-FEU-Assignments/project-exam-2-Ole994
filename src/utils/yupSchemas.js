@@ -6,14 +6,6 @@ export const userLoginSchema = yup.object().shape({
     .email("Please write a valid username"),
   password: yup.string().required("Password is required"),
 });
-//remove the below
-// export const bookingSchema = yup.object().shape({
-//   title: yup.string().required("Please enter a title"),
-//   message: yup.string().required("Please provide a message"),
-//   contact: yup
-//     .string()
-//     .required("Please provide an email so we can contact you"),
-// });
 
 export const contactSchema = yup.object().shape({
   firstname: yup
@@ -43,7 +35,6 @@ export const bookingSchemas = yup.object().shape({
     .string()
     .required("please write a valid first name")
     .min(2, "The last name must be at least 4 characters"),
-
   checkin: yup.date().required("Choose date for check in"),
   checkout: yup.date().nullable().required("Choose date for check out"),
   rooms: yup.string().required("Please pick a room"),

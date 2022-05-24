@@ -1,6 +1,6 @@
 footer {
   background-color: #516e71;
-  margin-top: 20px;
+
   color: white;
 
   p {
@@ -24,8 +24,8 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 80px;
-  margin-top: 40px;
-  padding: 20px;
+
+  // padding: 20px;
 }
 
 .footerHeader {

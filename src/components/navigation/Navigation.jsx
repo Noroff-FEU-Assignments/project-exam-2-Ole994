@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import logo from "../../pictures/logo.svg";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
-import { deleteFromLocalstorage } from "../../utils/helpersLocalStorage";
 
 import { useContext } from "react";
 import LiveSearchFilter from "../filter/LiveSearchFilter";

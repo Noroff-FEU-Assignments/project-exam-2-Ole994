@@ -28,49 +28,67 @@ export const BookingForm = ({}) => {
     alert("message sent");
   };
   return (
-    <form onSubmit={handleSubmit(onFormSubmit)}>
-      <h2>Book your room today</h2>
-      <br />
-      <input {...register("name")} placeholder="Name" type="text" />
-      {errors.name && (
-        <p className="error-message-booking">{errors.name.message}</p>
-      )}
-      <br />
-      <input {...register("checkin")} placeholder="Check in" type="date" />
-      {errors.checkin && (
-        <p className="error-message-booking">{errors.checkin.message}</p>
-      )}
-      <br />
-      <input {...register("checkout")} placeholder="Check out" type="date" />
-      {errors.checkout && (
-        <p className="error-message-booking">{errors.checkout.message}</p>
-      )}
-      <br />
-      <input {...register("rooms")} placeholder="Rooms" type="text" />
-      {errors.rooms && (
-        <p className="error-message-booking">{errors.rooms.message}</p>
-      )}
-      <br />
-      <input
-        {...register("adults")}
-        placeholder="Number of adults"
-        type="text"
-      />
-      {errors.adults && (
-        <p className="error-message-booking">{errors.adults.message}</p>
-      )}
-      <br />
-      <input
-        {...register("children")}
-        placeholder="Number of children"
-        type="text"
-      />
-      {errors.children && (
-        <p className="error-message-booking">{errors.children.message}</p>
-      )}
-      <br />
-      <button type="submit">Book</button>
-    </form>
+    <>
+      <div className="backgroundBooking">
+        <div className="bookingWrap">
+          <form className="bookingForm" onSubmit={handleSubmit(onFormSubmit)}>
+            <h2>Book your room today</h2>
+
+            <br />
+            <input {...register("name")} placeholder="Name" type="text" />
+            {errors.name && (
+              <p className="error-message-booking">{errors.name.message}</p>
+            )}
+            <br />
+
+            <input
+              {...register("checkin")}
+              placeholder="Check in"
+              type="date"
+            />
+            {errors.checkin && (
+              <p className="error-message-booking">{errors.checkin.message}</p>
+            )}
+            <br />
+            <input
+              {...register("checkout")}
+              placeholder="Check out"
+              type="date"
+            />
+            {errors.checkout && (
+              <p className="error-message-booking">{errors.checkout.message}</p>
+            )}
+            <br />
+            <input {...register("rooms")} placeholder="Rooms" type="number" />
+            {errors.rooms && (
+              <p className="error-message-booking">{errors.rooms.message}</p>
+            )}
+            <br />
+            <input
+              {...register("adults")}
+              placeholder="Number of adults"
+              type="number"
+            />
+            {errors.adults && (
+              <p className="error-message-booking">{errors.adults.message}</p>
+            )}
+            <br />
+            <input
+              {...register("children")}
+              placeholder="Number of children"
+              type="number"
+            />
+            {errors.children && (
+              <p className="error-message-booking">{errors.children.message}</p>
+            )}
+            <br />
+            <button className="bookingSubmit" type="submit">
+              Book
+            </button>
+          </form>
+        </div>
+      </div>
+    </>
   );
 };
 export default BookingForm;
