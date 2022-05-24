@@ -27,7 +27,7 @@ const Contact = () => {
     });
     console.log(responseData);
     reset();
-    alert("message sent");
+    alert("booking sent");
   };
 
   return (
@@ -45,7 +45,6 @@ const Contact = () => {
               )}
             </div>
           </div>
-
           <div className="col">
             <div className="form-group">
               <label>Last name</label>
@@ -55,7 +54,6 @@ const Contact = () => {
               )}
             </div>
           </div>
-
           <div className="col">
             <div className="form-group">
               <label>Message</label>
@@ -68,7 +66,6 @@ const Contact = () => {
               )}
             </div>
           </div>
-
           <div className="col">
             <div className="form-group">
               <label>Email</label>
@@ -81,10 +78,11 @@ const Contact = () => {
               )}
             </div>
           </div>
-
-          {""}
-          <div className="col">
-            <input type="submit" value="Submit" />
+          {""}{" "}
+          <div className="div">
+            <div className="col">
+              <input type="submit" value="Submit" />
+            </div>
           </div>
         </div>
       </form>

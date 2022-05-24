@@ -74,18 +74,16 @@ const BookingsFetch = () => {
           return (
             <div key={idx} className="contactAdminContainer">
               <div className="contactAdmin">
-                <div className="adminName">
-                  <h3>{item.attributes.children}</h3>
-                </div>
+                <div className="adminName">heiLatest booking</div>
                 {""}
-                <div className="adminContactStuff">
-                  <p>{item.attributes.checkout}</p>
+                <div className="bookingResult">
+                  <p>Name: {item.attributes.name}</p>
+                  <p>Checkin: {item.attributes.checkin}</p>
+                  <p>Checkout:{item.attributes.checkout}</p>
+                  <p>Rooms: {item.attributes.rooms}</p>
+                  <p>Adults:{item.attributes.adults}</p>
+                  <p>Children: {item.attributes.children}</p>
                 </div>
-                <div className="adminContactStuff">
-                  <p>{item.attributes.messages}</p>
-                  <p>{item.attributes.email}</p>
-                </div>
-
                 <div className="deleteButton">
                   <button className="buttonMain" onClick={handleDelete}>
                     DELETE

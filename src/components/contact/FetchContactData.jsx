@@ -89,7 +89,6 @@ export const FetchContactData = () => {
               <div className="contactAdmin">
                 <div className="adminName">
                   <h3>{item.attributes.firstname}</h3>
-                  <h3>{item.attributes.lastname}</h3>
                 </div>
                 {""}
                 <div className="adminContactStuff">

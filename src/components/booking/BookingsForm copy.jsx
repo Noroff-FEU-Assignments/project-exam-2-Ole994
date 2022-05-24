@@ -1,6 +1,5 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-
 import { yupResolver } from "@hookform/resolvers/yup";
 import { bookingSchemas } from "../../utils/yupSchemas";
 import { BOOKING_PATH } from "../../helpers/api/api";
@@ -28,62 +27,110 @@ export const BookingForm = ({}) => {
     });
     console.log("response data after post:", response.data);
     reset();
+    alert("booking sendt");
   };
 
   return (
-    <form onSubmit={handleSubmit(onFormSubmit)}>
-      <h2>Book your room today</h2>
-      <br />
+    <>
+      <div className="bookingHero"></div>
+      <div className="bookingWrapper">
+        <form className="bookingForm" onSubmit={handleSubmit(onFormSubmit)}>
+          <div className="row">
+            <div className="col">
+              <div className="">
+                <label>First name</label>
+                <input
+                  className="inputBooking"
+                  {...register("name")}
+                  placeholder="Name"
+                  type="text"
+                />
+                <p>{errors.name?.message}</p>
+                <br />
+              </div>
+            </div>
 
-      <input {...register("name")} placeholder="Name" type="text" required />
-      <p>{errors.name?.message}</p>
-      <br />
+            <div className="col">
+              <div className="">
+                <label>Last name</label>
+                <input
+                  {...register("checkin")}
+                  placeholder="Check in"
+                  type="date"
+                />
+                {/* <p>{errors.checkin?.message}</p> */}
 
-      <input
-        {...register("checkin")}
-        placeholder="Check in"
-        type="date"
-        required
-      />
-      <p>{errors.checkin?.message}</p>
+                <br />
+              </div>
+            </div>
 
-      <br />
+            <div className="col">
+              <div className="">
+                <label>checkout</label>
+                <input
+                  {...register("checkout")}
+                  placeholder="Check out"
+                  type="date"
+                />
+                {/* <p>{errors.checkout?.message}</p> */}
+                <br />
+              </div>
+            </div>
 
-      <input
-        {...register("checkout")}
-        placeholder="Check out"
-        type="date"
-        required
-      />
-      <p>{errors.checkout?.message}</p>
-      <br />
+            <div className="">
+              <div className="">
+                <label>rooms</label>
+                <input {...register("rooms")} placeholder="Rooms" type="text" />
+                <p>{errors.rooms?.message}</p>
+                <br />
+              </div>
+            </div>
 
-      <input {...register("rooms")} placeholder="Rooms" type="text" required />
-      <p>{errors.rooms?.message}</p>
-      <br />
+            <div className="">
+              <div className="">
+                <label>adults</label>
+                <input
+                  {...register("adults")}
+                  placeholder="Number of adults"
+                  type="text"
+                />
+                <p>{errors.adults?.message}</p>
+                <br />
 
-      <input
-        {...register("adults")}
-        placeholder="Number of adults"
-        type="text"
-        required
-      />
-      <p>{errors.adults?.message}</p>
-      <br />
+                <input
+                  {...register("children")}
+                  placeholder="Number of children"
+                  type="text"
+                />
+                <p>{errors.children?.message}</p>
+                <br />
+              </div>
+            </div>
 
-      <input
-        {...register("children")}
-        placeholder="Number of children"
-        type="text"
-        required
-      />
-      <p>{errors.children?.message}</p>
-      <br />
+            <input
+              {...register("adults")}
+              placeholder="Number of adults"
+              type="text"
+            />
+            <p>{errors.adults?.message}</p>
+            <br />
 
-      <button type="submit" value="submit">
-        Book
-      </button>
-    </form>
+            <input
+              {...register("children")}
+              placeholder="Number of children"
+              type="text"
+            />
+            <p>{errors.children?.message}</p>
+            <br />
+
+            {""}
+          </div>
+          <button type="submit" value="submit">
+            Book
+          </button>
+        </form>
+      </div>
+    </>
   );
 };
 

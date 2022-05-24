@@ -34,9 +34,13 @@
 }
 
 .viewHotels {
-  display: flex;
-  justify-content: center;
-  // align-items: center;
+  position: absolute;
+  left: 20%;
+  margin-top: 400px;
+
+  button {
+    height: 80px;
+  }
 }
 
 .restaurantImg {

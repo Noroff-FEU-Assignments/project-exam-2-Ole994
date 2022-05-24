@@ -27,10 +27,12 @@ const Home = () => {
           <div className="headerFront">
             <h1>Velkommen til Bergen</h1>
           </div>
-          <div className="viewHotels">
-            <Link to={`/Result`}>
-              <button>Se våres hotellrom</button>
-            </Link>
+          <div className="flex">
+            <div className="viewHotels">
+              <Link to={`/Booking`}>
+                <button>Book hotelroom now</button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>{" "}
