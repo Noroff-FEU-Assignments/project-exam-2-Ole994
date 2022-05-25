@@ -1,50 +1,55 @@
-import styled from "styled-components";
+import { useState } from "react";
+import { FILTER_URL } from "../../helpers/api/api";
+import { useEffect } from "react";
+import axios from "axios";
 
-const SearchBarContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 34em;
-  height: 3.8em;
-  background-color: white;
-  border-radius: 6px;
-  box-shadow: 0px 2px 12px 3px rgba(0, 0, 0, 0.14);
-`;
+const LiveSearchFilter = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-const searchInputContainer = styled.div`
-  width: 100%;
-  min-height: 4em;
-  display: flex;
-  align-items: center;
-  position: relative;
-  padding: 2px 15px;
-`;
+  useEffect(() => {
+    setIsLoading(true);
+    axios.get(FILTER_URL).then((response) => setData(response.data.data));
 
-const searchInput = styled.div`
-  width: 100%;
-  height: 100%;
-  outline: none;
-  border: none;
-  font-size: 21px;
-  color: #12112e;
-  font-weight: 500;
-  border-radius: 6px;
-  background-color: transparent;
-
-  &:focus {
-    outline: none;
-    &::placeholder {
-      color: #bebebe;
-    }
+    setIsLoading(false);
+  }, []);
+  // console.log(BASE_URL, BOOKINGS_URL);
+  if (isLoading) {
+    <h4>loading</h4>;
   }
-`;
-
-const LiveSearchFilter = (props) => {
   return (
-    <SearchBarContainer>
-      <searchInputContainer>
-        <searchInput />
-      </searchInputContainer>
-    </SearchBarContainer>
+    <>
+      <div className="filterWrap">
+        <input
+          type="text"
+          placeholder="Search"
+          onChange={(event) => {
+            setSearchTerm(event.target.value);
+          }}
+        />
+        {data
+          .filter((hotel) => {
+            if (searchTerm == "") {
+              return hotel;
+            } else if (
+              hotel.attributes.text
+                .toLowerCase()
+                .includes(searchTerm.toLowerCase())
+            ) {
+              return hotel;
+            }
+          })
+          .map((hotel, key) => {
+            return (
+              <div key={key}>
+                <p> {hotel.attributes.text} </p>
+              </div>
+            );
+          })}
+      </div>
+    </>
   );
 };
+
 export default LiveSearchFilter;

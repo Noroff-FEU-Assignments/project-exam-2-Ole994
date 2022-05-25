@@ -2,16 +2,18 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BOOKING_PATH } from "../../helpers/api/api";
 import { useContext } from "react";
+import useToggle from "../../hooks/useToogle";
 import useAxios from "../../hooks/useAxios";
 import AuthContext from "../../context/AuthContext";
 
 const BookingsFetch = () => {
+  const [isTriggered, setIsTriggered] = useToggle();
   const [error, setError] = useState();
   const [bookings, setBookings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [auth] = useContext(AuthContext);
   const http = useAxios();
-  const [newList, setNewList] = useState(bookings);
+  //
 
   useEffect(() => {
     setIsLoading(true);
@@ -22,15 +24,7 @@ const BookingsFetch = () => {
     };
 
     fetchData().catch((error) => setError(error.response.data.error));
-  }, [newList, auth]);
-
-  const handleRemoveItem = async (e) => {
-    const id = e.target.getAttribute("id");
-    console.log(id);
-
-    const deleteItem = await http.delete(`${BOOKING_PATH}/${id}`);
-    setNewList(newList.filter((item) => item.id !== id));
-  };
+  }, [isTriggered, auth]);
 
   if (error) {
     return (
@@ -62,6 +56,21 @@ const BookingsFetch = () => {
       <h2>Bookings:</h2>
       <div>
         {bookings.map((item, idx) => {
+          const deleteBooking = async () => {
+            const responseData = await http.delete(
+              `${BOOKING_PATH}/${item.id}`
+            );
+            console.log(responseData);
+          };
+
+          const handleDelete = () => {
+            if (window.confirm("Are you sure?")) {
+              deleteBooking();
+              setIsTriggered();
+            } else {
+              return;
+            }
+          };
           return (
             <div key={idx} className="contactAdminContainer">
               <div className="contactAdmin">
@@ -76,11 +85,7 @@ const BookingsFetch = () => {
                   <p>Children: {item.attributes.children}</p>
                 </div>
                 <div className="deleteButton">
-                  <button
-                    id={item.id}
-                    className="buttonMain"
-                    onClick={handleRemoveItem}
-                  >
+                  <button className="buttonMain" onClick={handleDelete}>
                     DELETE
                   </button>
                 </div>
