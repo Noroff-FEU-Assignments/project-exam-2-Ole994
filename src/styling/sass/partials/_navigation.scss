@@ -9,6 +9,16 @@ button {
   font-family: "Inconsolata", monospace;
 }
 
+.defaultBtn {
+  background-color: #516e71;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+
 .imgButton {
   width: 200px;
 }

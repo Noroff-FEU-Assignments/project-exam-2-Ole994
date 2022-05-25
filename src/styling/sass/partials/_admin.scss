@@ -45,3 +45,23 @@
   width: 100%;
   text-align: center;
 }
+
+.unLogged {
+  h1 {
+    text-align: center;
+  }
+}
+.buttonUnLogged {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button {
+    width: 50%;
+    background-color: red;
+  }
+  button:hover {
+    background-color: #516e71;
+    color: white;
+    border: none;
+  }
+}

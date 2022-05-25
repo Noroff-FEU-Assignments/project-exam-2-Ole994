@@ -35,7 +35,7 @@ const BookingsFetch = () => {
   if (error) {
     return (
       <div>
-        <h1>Du må være logget inn for å se meldinger</h1>
+        <h1>You have to login to wiev the content on this page!</h1>
         <p>Error: {error.status} </p>
         <p>{error.message}</p>
         <Link to="/login">Login</Link>
@@ -49,9 +49,14 @@ const BookingsFetch = () => {
 
   if (!auth) {
     return (
-      <div>
-        <h1>Du må være logget inn for å se denne siden</h1>
-        <Link to="/login">Login</Link>
+      <div className="unLogged">
+        <h1>You have to login to wiev the content on this page</h1>
+        <Link to="/login">
+          {" "}
+          <div className="buttonUnLogged">
+            <button>Please login</button>
+          </div>
+        </Link>
       </div>
     );
   }

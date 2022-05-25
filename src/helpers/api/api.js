@@ -2,6 +2,7 @@ import axios from "axios";
 
 export const BASE_URL = "https://fast-tor-53724.herokuapp.com/";
 export const FILTER_URL = "https://fast-tor-53724.herokuapp.com/api/hotels";
+export const HOTELS_PATH = "https://fast-tor-53724.herokuapp.com/api/hotels";
 
 export const CONTACT_PATH = "https://fast-tor-53724.herokuapp.com/api/contacts";
 export const BOOKING_PATH = "https://fast-tor-53724.herokuapp.com/api/bookings";

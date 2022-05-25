@@ -19,6 +19,7 @@ const Navigation = () => {
   return (
     <>
       <div>
+        <LiveSearchFilter />
         <nav>
           <div className="logo-div">
             <a href="/">
@@ -146,7 +147,6 @@ const Navigation = () => {
             </ul>
           )}
         </nav>
-        <LiveSearchFilter />
       </div>
     </>
   );
