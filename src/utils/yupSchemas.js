@@ -41,11 +41,3 @@ export const bookingSchemas = yup.object().shape({
   adults: yup.string().required("How many adults will there be?"),
   children: yup.string().required("how many children will there be?"),
 });
-// description: yup
-//     .string()
-//     .required("Write a topic")
-//     .min(10, "The last name must be at least 10 characters"),// message: yup.string().required("vær snill å skriv inn en melding"),
-// lastname: yup
-//     .string()
-//     .required("Please type in your last name")
-//     .min(2, "The last name must be at least 4 characters"),

@@ -32,13 +32,11 @@ const Contact = () => {
 
   return (
     <>
-      <div className="container">
-        <h1>Contact</h1>
-        <form id="contact" onSubmit={handleSubmit(onSubmit)}>
-          <h3>Quick Contact</h3>
-          <h4>Contact us today, and get reply with in 24 hours!</h4>
-          <fieldset>
-            <div className="flexContact">
+      <form className="card" onSubmit={handleSubmit(onSubmit)}>
+        <div className="row">
+          <div className="col">
+            <div className="form-group">
+              <label>First name</label>
               <input {...register("firstname")} placeholder="ex. Ole" />
               {errors.firstname && (
                 <span className="error-message">
@@ -46,18 +44,31 @@ const Contact = () => {
                 </span>
               )}
             </div>
-          </fieldset>
-          <fieldset>
-            <div className="flexContact">
+          </div>
+          <div className="col">
+            <div className="form-group">
+              <label>Last name</label>
               <input {...register("lastname")} placeholder="ex. Nordmann" />
               {errors.lastname && (
                 <span className="error-message">{errors.lastname.message}</span>
               )}
             </div>
-          </fieldset>
-
-          <fieldset>
-            <div className="flexContact">
+          </div>
+          <div className="col">
+            <div className="form-group">
+              <label>Message</label>
+              <input
+                {...register("messages")}
+                placeholder="ex. Thank you for the stay, can not wait till next time :) "
+              />
+              {errors.messages && (
+                <span className="error-message">{errors.messages.message}</span>
+              )}
+            </div>
+          </div>
+          <div className="col">
+            <div className="form-group">
+              <label>Email</label>
               <input
                 {...register("email")}
                 placeholder="ex. hotel@example.no.."
@@ -66,31 +77,16 @@ const Contact = () => {
                 <span className="error-message">{errors.email.message}</span>
               )}
             </div>
-          </fieldset>
-
-          <fieldset>
-            <div className="flexContact">
-              <textarea
-                {...register("messages")}
-                placeholder="ex. Thank you for the stay, can not wait till next time :) "
-              />
-              {errors.messages && (
-                <span className="error-message">{errors.messages.message}</span>
-              )}
+          </div>
+          {""}{" "}
+          <div className="div">
+            <div className="col">
+              <input type="submit" value="Submit" />
             </div>
-          </fieldset>
-          <fieldset>
-            <button
-              name="submit"
-              type="submit"
-              id="contact-submit"
-              data-submit="...Sending"
-            >
-              Submit
-            </button>
-          </fieldset>
-        </form>
-      </div>
+          </div>
+        </div>
+      </form>
+      {/* <EditContact /> */}
     </>
   );
 };

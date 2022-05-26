@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { BASE_URL } from "../helpers/api/api";
 // import { format } from "fecha";
+import LiveSearchFilter from "../components/filter/LiveSearchFilter";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -27,13 +28,17 @@ const Home = () => {
           <div className="headerFront">
             <h1>Velkommen til Bergen</h1>
           </div>
-          <div className="flex">
+          <div className="flexHeroButton">
             <div className="viewHotels">
               <Link to={`/Booking`}>
                 <button>Book hotelroom now</button>
               </Link>
             </div>
           </div>
+        </div>
+        <div className="liveSearchFilter">
+          {" "}
+          <LiveSearchFilter />
         </div>
       </div>{" "}
       <div className="containerHome">

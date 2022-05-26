@@ -19,7 +19,6 @@ const Navigation = () => {
   return (
     <>
       <div>
-        <LiveSearchFilter />
         <nav>
           <div className="logo-div">
             <a href="/">

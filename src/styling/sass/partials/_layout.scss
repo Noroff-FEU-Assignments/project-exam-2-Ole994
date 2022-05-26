@@ -16,6 +16,10 @@
   text-decoration: none;
   list-style-type: none;
 }
+
+body {
+  height: 100vh;
+}
 p {
   font-size: 1rem;
   font-family: "Inconsolata", monospace;
@@ -80,4 +84,36 @@ button:hover,
 
 .button:active {
   opacity: 0.5;
+}
+
+.inputResult {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  height: 40px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  input {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.filterResultContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-decoration: none;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.filterLinks {
+  a {
+    text-decoration: none;
+    color: black;
+    margin-top: 20px;
+  }
 }

@@ -3,8 +3,9 @@ import { HOTELS_PATH } from "../../helpers/api/api";
 import { useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { set } from "react-hook-form";
 
-const LiveSearchFilter = () => {
+export const LiveSearchFilter = () => {
   const [hotels, setHotels] = useState([]);
   const [searchTerm, setSearchTerm] = useState(true);
   const [render, setRender] = useState();
@@ -28,15 +29,20 @@ const LiveSearchFilter = () => {
     setHotels(filterHotels);
     setSearchTerm(false);
 
-    console.log(e);
-
     if (e.target.value < 1) {
       setRender(!render);
     }
   };
 
   const showResults = () => {
-    setRender(false);
+    setSearchTerm(false);
+    setRender();
+  };
+
+  const hideResults = () => {
+    setSearchTerm(true);
+    setRender();
+    setTimeout(5000);
   };
 
   return (
@@ -48,6 +54,7 @@ const LiveSearchFilter = () => {
             type="text"
             onChange={searchFilter}
             onFocus={showResults}
+            onBlur={hideResults}
             tabIndex="0"
           />
         </div>
@@ -56,14 +63,13 @@ const LiveSearchFilter = () => {
           {hotels.map((item) => {
             return (
               <div
-                className="typehead-item"
+                className="filterLinks"
                 key={item.id}
                 style={{
-                  backgroundColor: "white",
                   display: searchTerm ? "none" : "block",
                 }}
               >
-                <Link to={`detail/${item.id}`}>{item.attributes.text}</Link>
+                <Link to={`/Detail/${item.id}`}>{item.attributes.text}</Link>
               </div>
             );
           })}
@@ -72,5 +78,4 @@ const LiveSearchFilter = () => {
     </>
   );
 };
-
 export default LiveSearchFilter;
