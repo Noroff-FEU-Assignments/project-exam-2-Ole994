@@ -51,6 +51,7 @@ const LoginForm = () => {
   return (
     <>
       <div className="background-login">
+        <h1>Login</h1>
         <form className="loginForm" onSubmit={handleSubmit(onSubmit)}>
           <div className="loginContainer">
             <h2>Login to your account</h2>

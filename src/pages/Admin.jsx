@@ -1,5 +1,5 @@
-import BookingsFetch from "../components/booking/BookingsFetch copy2";
-import FetchContactData from "../components/contact/FetchContactDataDelete";
+import BookingsFetch from "../components/booking/BookingsFetch";
+import FetchContactData from "../components/contact/FetchContactData";
 
 export const Admin = () => {
   return (

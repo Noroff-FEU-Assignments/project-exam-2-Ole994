@@ -1,79 +1,70 @@
 // import logo from "../../pictures/logo.svg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <>
-      <footer>
-        <div className="footerHeader">{/* <h2>Holidaze</h2> */}</div>
-        {""}
-        {""}
-        <div className="footer-container">
-          {""}
-          {""}
-          <div className="l-footer">
-            <div className="about">
-              <h3>Om hotellet</h3>
-            </div>
-
-            <div className="about-text-footer">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat
-              </p>
-            </div>
+      <div className="footer">
+        <div className="inner-footer">
+          <div className="footer-items">
+            <h1>Holidaze</h1>
+            <p>We are one of the highest ranking hotels in Bergen</p>
           </div>
-          {""}
-          <div className="m-footer">
-            <div className="about">
-              <h3>Sider</h3>
-            </div>
 
-            <div className="pages-footer">
-              <ul>
-                <li>
-                  <a href="/src/components/pages/Detail.jsx">Hjem</a>
-                </li>
-                <li>
-                  <a href="/src/components/pages/Detail.jsx">Hotellrom</a>
-                </li>
-                <li>
-                  <a href="/src/components/pages/Detail.jsx">Kontakt</a>
-                </li>
-                <li>
-                  <a href="/src/components/pages/Detail.jsx">Login</a>
-                </li>
-                <li>
-                  <a href="/src/components/pages/Detail.jsx">Bestill</a>
-                </li>
-              </ul>
-            </div>
+          <div className="footer-items">
+            <h3>Quick Links</h3>
+            <div class="border1"></div>
+            <ul>
+              <Link to="/">
+                <li>Home</li>
+              </Link>
+              <Link to="Contact">
+                <li>Contact</li>
+              </Link>
+              <Link to="Result">
+                <li>Result</li>
+              </Link>
+              <Link to="Booking">
+                <li>Booking page</li>
+              </Link>
+              <Link to="Login">
+                <li>Login</li>
+              </Link>
+            </ul>
           </div>
-          {""}
-          <div className="r-footer">
-            <div className="attractions">
-              <div className="attractions-header">
-                <h3>Attraksjoner i Bergen</h3>
-              </div>
-              {""}
-              <ul>
-                <li className="attractions-list">
-                  <a href="https://www.akvariet.no/">Akvariet</a>
-                </li>
-                <li className="attractions-list">
-                  <a href="https://www.visitbergen.com/ting-a-gjore/bryggen-i-bergen-p878553">
-                    Besøke bryggen
-                  </a>
-                </li>
-                <li className="attractions-list">
-                  <a href="https://www.floyen.no/">Tur opp Fløyen</a>
-                </li>
-              </ul>
-            </div>
+
+          <div className="footer-items">
+            <h3>Things to do in Bergen</h3>
+            <div className="border1"></div>
+            <ul>
+              <li>Wisit Fløyen, a nice mountain</li>
+
+              <li>Wisit the fishing market</li>
+
+              <li>Walk up Stolzekleiven</li>
+            </ul>
+          </div>
+
+          <div class="footer-items">
+            <h3>Contact us</h3>
+            <div className="border1"></div>
+            <ul>
+              <li>
+                <i className="fa fa-map-marker" aria-hidden="true"></i>XYZ, abc
+              </li>
+              <li>
+                <i class="fa fa-phone" aria-hidden="true"></i>9088866
+              </li>
+              <li>
+                <i className="fa fa-envelope" aria-hidden="true"></i>
+                Holidaze@bergen.no
+              </li>
+            </ul>
           </div>
         </div>
-        <div className="copyRights">
-          <h3>Holidaze</h3>
-        </div>
-      </footer>
+      </div>
+
+      <div className="footer-bottom">Copyright &copy; Holidaze 2022.</div>
     </>
   );
 };
