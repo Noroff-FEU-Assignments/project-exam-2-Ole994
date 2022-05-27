@@ -13,7 +13,9 @@ const Result = () => {
   }, []);
   return (
     <>
-      <div className="headerResult"></div>
+      <div className="headerResult">
+        <h1>Our hotelrooms</h1>
+      </div>
 
       <div className="containerResult">
         {data.length > 0

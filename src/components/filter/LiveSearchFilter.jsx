@@ -3,7 +3,6 @@ import { HOTELS_PATH } from "../../helpers/api/api";
 import { useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { set } from "react-hook-form";
 
 export const LiveSearchFilter = () => {
   const [hotels, setHotels] = useState([]);

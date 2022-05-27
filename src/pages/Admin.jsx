@@ -1,6 +1,5 @@
-import BookingsFetch from "../components/booking/BookingsFetch";
-import FetchContactData from "../components/contact/FetchContactData";
-import AdminForm from "../components/AdminForm";
+import BookingsFetch from "../components/booking/BookingsFetch copy2";
+import FetchContactData from "../components/contact/FetchContactDataDelete";
 
 export const Admin = () => {
   return (
@@ -10,7 +9,5 @@ export const Admin = () => {
     </>
   );
 };
-
-//bookings
 
 export default Admin;

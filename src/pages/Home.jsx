@@ -17,7 +17,7 @@ const Home = () => {
 
     setIsLoading(false);
   }, []);
-  // console.log(BASE_URL, BOOKINGS_URL);
+
   if (isLoading) {
     <h4>loading</h4>;
   }
@@ -28,19 +28,16 @@ const Home = () => {
           <div className="headerFront">
             <h1>Velkommen til Bergen</h1>
           </div>
-          <div className="flexHeroButton">
-            <div className="viewHotels">
-              <Link to={`/Booking`}>
-                <button>Book hotelroom now</button>
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="liveSearchFilter">
-          {" "}
           <LiveSearchFilter />
         </div>
       </div>{" "}
+      <div className="flexHeroButton">
+        <div className="viewHotels">
+          <Link to={`/Booking`}>
+            <button>Book hotelroom now</button>
+          </Link>
+        </div>
+      </div>
       <div className="containerHome">
         {data.length > 0
           ? data.map(({ attributes, id }) => {

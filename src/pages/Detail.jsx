@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../helpers/api/api";
+import LiveSearchFilter from "../components/filter/LiveSearchFilter";
 
 const Detail = ({ attributes }) => {
   const { id } = useParams();
@@ -28,6 +29,7 @@ const Detail = ({ attributes }) => {
 
           <h2 className={`heading-detail ${data.text}`}> {data.text} </h2>
         </div>
+        <LiveSearchFilter></LiveSearchFilter>
         <div className="welcome-text">
           <h1>WELCOME TO HOLIDAZE HOTEL</h1>
           <h2>BEST LOCATION IN BERGEN</h2>

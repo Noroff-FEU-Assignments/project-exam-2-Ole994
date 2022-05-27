@@ -5,8 +5,9 @@ import { useContext } from "react";
 import useAxios from "../../hooks/useAxios";
 import AuthContext from "../../context/AuthContext";
 
-const BookingsFetch = () => {
+const BookingsFetchT = () => {
   const [error, setError] = useState();
+  const [isContentExpanded, setIsContentExpanded] = useState(false);
   const [bookings, setBookings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [auth] = useContext(AuthContext);
@@ -64,12 +65,19 @@ const BookingsFetch = () => {
     <div className="bookingContainer">
       {/* <h1>Messages {auth.user.userName}</h1> */}
       <h2>Bookings:</h2>
-      <div>
+      <button
+        onClick={() => {
+          setIsContentExpanded(!setIsContentExpanded);
+        }}
+      >
+        Push
+      </button>
+      <div className="booking-hide">
         {bookings.map((item, idx) => {
           return (
             <div key={idx} className="contactAdminContainer">
               <div className="contactAdmin">
-                <div className="adminName">Latest booking</div>
+                <div className="adminName">Latest bookindddg</div>
                 {""}
                 <div className="bookingResult">
                   <p>Name: {item.attributes.name}</p>
@@ -89,15 +97,12 @@ const BookingsFetch = () => {
                   </button>
                 </div>
               </div>
-
-              {/* <Link to={`/booking/${item.id}`}>VIEW</Link> */}
             </div>
           );
         })}
       </div>
-      {/* <BookingsForm sendBooking={sendBooking} /> */}
     </div>
   );
 };
 
-export default BookingsFetch;
+export default BookingsFetchT;
