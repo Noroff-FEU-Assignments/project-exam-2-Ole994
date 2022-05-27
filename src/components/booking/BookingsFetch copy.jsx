@@ -1,23 +1,23 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { CONTACT_PATH } from "../../helpers/api/api";
+import { BOOKING_PATH } from "../../helpers/api/api";
 import { useContext } from "react";
 import useAxios from "../../hooks/useAxios";
 import AuthContext from "../../context/AuthContext";
 
-export const FetchContactData = () => {
+const BookingsFetch = () => {
   const [error, setError] = useState();
-  const [contacts, setContacts] = useState([]);
+  const [bookings, setBookings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [auth] = useContext(AuthContext);
   const http = useAxios();
-  const [newList, setNewList] = useState(contacts);
+  const [newList, setNewList] = useState(bookings);
 
   useEffect(() => {
     setIsLoading(true);
     const fetchData = async () => {
-      const data = await http.get(CONTACT_PATH);
-      setContacts(data.data.data);
+      const data = await http.get(BOOKING_PATH);
+      setBookings(data.data.data);
       setIsLoading(false);
     };
 
@@ -28,14 +28,14 @@ export const FetchContactData = () => {
     const id = e.target.getAttribute("id");
     console.log(id);
 
-    const deleteItem = await http.delete(`${CONTACT_PATH}/${id}`);
+    const deleteItem = await http.delete(`${BOOKING_PATH}/${id}`);
     setNewList(newList.filter((item) => item.id !== id));
   };
 
   if (error) {
     return (
       <div>
-        <h1>Du må være logget inn for å se meldinger</h1>
+        <h1>You have to login to wiev the content on this page!</h1>
         <p>Error: {error.status} </p>
         <p>{error.message}</p>
         <Link to="/login">Login</Link>
@@ -43,31 +43,41 @@ export const FetchContactData = () => {
     );
   }
 
+  if (isLoading) {
+    return <div>Loading</div>;
+  }
+
   if (!auth) {
     return (
-      <div>
-        {/* <h1>Du må være logget inn for å se denne siden</h1>
-        <Link to="/login">Login</Link> */}
+      <div className="unLogged">
+        <Link to="/login">
+          {" "}
+          <div className="buttonUnLogged">
+            <button>Please login</button>
+          </div>
+        </Link>
       </div>
     );
   }
 
   return (
     <div className="bookingContainer">
-      <h3> {auth.user.userName}</h3>
-
+      {/* <h1>Messages {auth.user.userName}</h1> */}
+      <h2>Bookings:</h2>
       <div>
-        {contacts.map((item, idx) => {
+        {bookings.map((item, idx) => {
           return (
             <div key={idx} className="contactAdminContainer">
               <div className="contactAdmin">
-                <div className="adminName">
-                  <h3>{item.attributes.firstname}</h3>
-                </div>
+                <div className="adminName">Latest booking</div>
                 {""}
-                <div className="adminContactStuff">
-                  <p>{item.attributes.messages}</p>
-                  <p>{item.attributes.email}</p>
+                <div className="bookingResult">
+                  <p>Name: {item.attributes.name}</p>
+                  <p>Checkin: {item.attributes.checkin.substring(0, 10)}</p>
+                  <p>Checkout:{item.attributes.checkout.substring(0, 10)}</p>
+                  <p>Rooms: {item.attributes.rooms}</p>
+                  <p>Adults:{item.attributes.adults}</p>
+                  <p>Children: {item.attributes.children}</p>
                 </div>
                 <div className="deleteButton">
                   <button
@@ -90,4 +100,4 @@ export const FetchContactData = () => {
   );
 };
 
-export default FetchContactData;
+export default BookingsFetch;

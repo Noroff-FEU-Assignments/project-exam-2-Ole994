@@ -40,9 +40,10 @@ export const LiveSearchFilter = () => {
   };
 
   const hideResults = () => {
-    setSearchTerm(true);
-    setRender();
-    setTimeout(5000);
+    setTimeout(function () {
+      setSearchTerm(true);
+      setRender();
+    }, 100);
   };
 
   return (

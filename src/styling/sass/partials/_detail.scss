@@ -1,64 +1,79 @@
+.detailWrapper {
+}
+
 .detailContainer {
+  position: relative;
+
+  background-color: transparent;
 }
 
-.headerDetail {
-  display: flex;
-  justify-content: center;
-  h1 {
-    font-size: 60px;
-    margin-top: 70px;
-    color: #2d7b84;
-  }
+.detail-heading-container {
 }
 
-.detailWraper {
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-    rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  margin: 20px;
-  padding: 40px;
+.heading-detail {
+  margin-bottom: 50px;
+}
+
+.detail-image-header-container {
+  position: relative;
+  // width: 100%;
+  height: 250px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   flex-direction: column;
-  p {
-    margin: 10px;
-    line-height: 2.5em;
-    margin-right: 50px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.486);
+
+  .dynamicPic {
+    position: absolute;
+    width: 100%;
+    // bottom: 0;
+    z-index: -10;
   }
 }
-.hotelRoom {
-  width: 70%;
-  border-radius: 5px;
-  height: 30%;
-}
-
-.detail-image-container {
+.welcome-text,
+.description-text-detail {
+  background-color: #eeeeee;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.detail-name-container {
-  padding: 20px;
+  h1,
   h2 {
-    color: black;
+    padding: 20px;
   }
 }
 
-@media screen and (min-width: 700px) {
-  .detailWraper {
-    p {
-      line-height: 1.5em;
-      margin-right: 50px;
-    }
+.description-detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eeeeee;
+  p {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .dynamicPic {
+    height: 50vh;
+  }
+  .detail-image-header-container {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+    justify-content: flex-start;
+  }
+  .heading-detail {
+    margin-top: 300px;
+    font-size: 35px;
   }
 }
 @media screen and (min-width: 1200px) {
-  .hotelRoom {
-    height: 800px;
+  .heading-detail {
+    font-size: 80px;
+    margin-top: 220px;
   }
-
-  .detailWraper {
-    p {
-      font-size: 2rem;
-    }
+  .description-text-detail {
+    font-size: 30px;
   }
 }

@@ -7,9 +7,10 @@
 @import "contact";
 @import "admin";
 @import "booking";
+@import "bookingAdmin";
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Source+Sans+Pro:wght@700&family=Zen+Antique&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Outfit:wght@300&family=Source+Sans+Pro:wght@700&family=Zen+Antique&display=swap");
-@import "~bootstrap/scss/bootstrap";
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -39,17 +40,6 @@ h3 {
   font-family: "Outfit", sans-serif;
 }
 
-// button {
-//   border: 1px solid black;
-// }
-// button:hover {
-//   background-color: rgba(0, 0, 0, 0.522);
-//   border: 1px solid white;
-// }
-
-//button
-
-/* CSS */
 button {
   background: #e06b3f;
   border: 1px solid #e06b3f;

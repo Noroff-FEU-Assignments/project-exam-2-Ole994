@@ -48,10 +48,6 @@ fieldset {
   width: 100%;
 }
 
-// #contact input[type="text"],
-// #contact input[type="email"],
-// #contact input[type="tel"],
-// #contact input[type="url"],
 #contact textarea {
   width: 100%;
   border: 1px solid #ccc;
@@ -76,6 +72,11 @@ fieldset {
   max-width: 100%;
   resize: none;
   margin-top: 40px;
+}
+
+.error-message {
+  color: red;
+  font-size: 20px;
 }
 
 #contact button[type="submit"] {

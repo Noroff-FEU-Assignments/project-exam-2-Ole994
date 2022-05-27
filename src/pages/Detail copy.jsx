@@ -17,27 +17,37 @@ const Detail = ({ attributes }) => {
   console.log(data);
   return (
     <div className="detailContainer">
+      <div className="headerDetail">
+        <h1>Hotellrom</h1>
+      </div>
+
       {""}
-      <div key={id} className="detailWrapper">
-        <div className="detail-image-header-container">
-          <img
-            className="dynamicPic"
-            src={data.imgUrl}
-            alt="hotelroom pictures"
-          />
-
-          <h2 className={`heading-detail ${data.text}`}> {data.text} </h2>
+      <div key={id} className="detailWraper">
+        <div className="detail-name-container">
+          <h2 className={`name-detail ${data.text}`}> {data.text} </h2>
         </div>
-        <div className="welcome-text">
-          <h1>WELCOME TO HOLIDAZE HOTEL</h1>
-          <h2>BEST LOCATION IN BERGEN</h2>
-        </div>
+        {""}
 
-        <div className="description-detail">
-          <p className={`description-text-detail ${data.description}`}>
-            {" "}
-            {data.description}{" "}
-          </p>
+        <div className="contentDescription">
+          <div className="detail-image-container">
+            <img
+              className="hotelRoom"
+              src={data.imgUrl}
+              alt="hotelroom pictures"
+            />
+          </div>
+
+          <div className="description-container">
+            <p className={`description-detail ${data.description}`}>
+              {" "}
+              {data.description}{" "}
+            </p>
+          </div>
+        </div>
+        <div className="returnButton">
+          <Link to={""}>
+            <button>back</button>
+          </Link>
         </div>
         <div>
           <Link to={`/Detail/${id}`}></Link>

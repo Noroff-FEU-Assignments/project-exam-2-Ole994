@@ -40,14 +40,14 @@ export const FetchContactData = () => {
     setIsTriggered();
   };
   if (error) {
-    return (
-      <div>
-        <h1>Du må være logget inn for å se meldinger</h1>
-        <p>Error: {error.status} </p>
-        <p>{error.message}</p>
-        <Link to="/login">Login</Link>
-      </div>
-    );
+    // return (
+    //   <div>
+    //     <h1>Du må være logget inn for å se meldinger</h1>
+    //     <p>Error: {error.status} </p>
+    //     <p>{error.message}</p>
+    //     <Link to="/login">Login</Link>
+    //   </div>
+    // );
   }
 
   if (isLoading) {
@@ -66,7 +66,7 @@ export const FetchContactData = () => {
   return (
     <div className="bookingContainer">
       <h1>Messages {auth.user.userName}</h1>
-      <h2>Messages:</h2>
+
       <div>
         {bookings.map((item, idx) => {
           const deleteBooking = async () => {
