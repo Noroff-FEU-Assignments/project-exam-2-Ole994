@@ -37,11 +37,10 @@
   justify-content: center;
   align-items: center;
 
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-  background-color: rgba(0, 0, 0, 0.615);
   width: 50%;
   margin: auto;
-  margin-top: 200px;
+  padding: 30px;
+
   height: 100px;
 
   button {
@@ -50,6 +49,7 @@
 }
 .viewHotels {
   width: 50%;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .restaurantImg {
@@ -160,7 +160,9 @@
   }
 
   .viewHotels {
-    height: 400px;
+    button {
+      font-size: 30px;
+    }
   }
 
   .backgroundBreakfast {

@@ -13,7 +13,7 @@ const Footer = () => {
 
           <div className="footer-items">
             <h3>Quick Links</h3>
-            <div class="border1"></div>
+            <div className="border1"></div>
             <ul>
               <Link to="/">
                 <li>Home</li>
@@ -45,7 +45,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div class="footer-items">
+          <div className="footer-items">
             <h3>Contact us</h3>
             <div className="border1"></div>
             <ul>
@@ -53,7 +53,7 @@ const Footer = () => {
                 <i className="fa fa-map-marker" aria-hidden="true"></i>XYZ, abc
               </li>
               <li>
-                <i class="fa fa-phone" aria-hidden="true"></i>9088866
+                <i className="fa fa-phone" aria-hidden="true"></i>9088866
               </li>
               <li>
                 <i className="fa fa-envelope" aria-hidden="true"></i>
