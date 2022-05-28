@@ -65,7 +65,7 @@ export const FetchContactData = () => {
 
   return (
     <div className="bookingContainer">
-      <h2>Messages: {auth.user.userName}</h2>
+      {/* <h1>Messages {auth.user.userName}</h1> */}
 
       <div>
         {bookings.map((item, idx) => {
@@ -87,26 +87,32 @@ export const FetchContactData = () => {
           };
           return (
             <>
-              <div key={idx} className="contactFlex">
-                <div className="contactAdminContainer">
-                  <div className="contactAdmin">
-                    {""}
-                    <div className="adminContactStuff">
-                      <p>Name: {item.attributes.firstname}</p>
-                      <p>Last name: {item.attributes.lastname}</p>
-                      <p>Email: {item.attributes.email}</p>
-                      <p>Messages: {item.attributes.messages}</p>
-                    </div>
+              <div className="contactFlex">
+                <h3>Contact:</h3>
+              </div>
+              <div key={idx} className="contactAdminContainer">
+                <div className="contactAdmin">
+                  {""}
+                  <div className="adminContactStuff">
+                    <h>Name: {item.attributes.firstname}</h>
+                    <h>Last name: {item.attributes.lastname}</h>
+                    <h>Email: {item.attributes.email}</h>
+                    <h>Messages: {item.attributes.messages}</h>
+                  </div>
+                  <div className="deleteButton">
+                    <button className="buttonMain" onClick={handleDelete}>
+                      DELETE
+                    </button>
                   </div>
                 </div>
-                <div className="buttonContact">
-                  <button onClick={handleDelete}>DELETE</button>
-                </div>
+
+                {/* <Link to={`/booking/${item.id}`}>VIEW</Link> */}
               </div>
             </>
           );
         })}
       </div>
+      {/* <BookingsForm sendBooking={sendBooking} /> */}
     </div>
   );
 };

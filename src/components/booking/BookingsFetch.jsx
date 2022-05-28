@@ -5,7 +5,7 @@ import { useContext } from "react";
 import useAxios from "../../hooks/useAxios";
 import AuthContext from "../../context/AuthContext";
 
-const BookingsFetchT = () => {
+const BookingsFetch = () => {
   const [error, setError] = useState();
   const [isContentExpanded, setIsContentExpanded] = useState(false);
   const [bookings, setBookings] = useState([]);
@@ -65,19 +65,18 @@ const BookingsFetchT = () => {
     <div className="bookingContainer">
       {/* <h1>Messages {auth.user.userName}</h1> */}
       <h2>Bookings:</h2>
-      <button
+      {/* <button
         onClick={() => {
           setIsContentExpanded(!setIsContentExpanded);
         }}
       >
         Push
-      </button>
+      </button> */}
       <div className="booking-hide">
         {bookings.map((item, idx) => {
           return (
-            <div key={idx} className="contactAdminContainer">
-              <div className="contactAdmin">
-                <div className="adminName">Latest bookindddg</div>
+            <div key={idx} className="bookingAdminContainer">
+              <div className="bookingAdmin">
                 {""}
                 <div className="bookingResult">
                   <p>Name: {item.attributes.name}</p>
@@ -105,4 +104,4 @@ const BookingsFetchT = () => {
   );
 };
 
-export default BookingsFetchT;
+export default BookingsFetch;

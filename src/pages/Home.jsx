@@ -62,7 +62,7 @@ const Home = () => {
                       <div>
                         <div className="detailButton">
                           <Link to={`/Detail/${id}`}>
-                            <button className="readMore">Les mer</button>
+                            <button className="readMore">Read more</button>
                           </Link>
                         </div>
                       </div>

@@ -1,23 +1,30 @@
-.gridAdminContent {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 80px;
-  padding: 50px;
-  width: 100%;
+.buttonContact {
+  button {
+  }
 }
-
-.bookingAdmin {
+.contactFlex {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   border: 2px solid black;
+  height: 300px;
+  margin-top: 20px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-
-  margin-top: 20px;
 }
-.deleteButton {
-  width: 50%;
+.contactAdminContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.contactAdmin {
+}
+.adminContactStuff {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
 }

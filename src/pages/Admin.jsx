@@ -4,8 +4,10 @@ import FetchContactData from "../components/contact/FetchContactData";
 export const Admin = () => {
   return (
     <>
-      <BookingsFetch></BookingsFetch>
-      <FetchContactData></FetchContactData>
+      <div className="gridAdminContent">
+        <BookingsFetch></BookingsFetch>
+        <FetchContactData></FetchContactData>
+      </div>
     </>
   );
 };
