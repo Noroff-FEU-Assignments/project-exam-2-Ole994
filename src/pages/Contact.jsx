@@ -20,7 +20,6 @@ const Contact = () => {
     const responseData = await axios.post(url, {
       data: {
         firstname: data.firstname,
-        lastname: data.lastame,
         messages: data.messages,
         email: data.email,
       },
@@ -44,14 +43,6 @@ const Contact = () => {
                 <span className="error-message">
                   {errors.firstname.message}
                 </span>
-              )}
-            </div>
-          </fieldset>
-          <fieldset>
-            <div className="flexContact">
-              <input {...register("lastname")} placeholder="ex. Nordmann" />
-              {errors.lastname && (
-                <span className="error-message">{errors.lastname.message}</span>
               )}
             </div>
           </fieldset>

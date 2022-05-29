@@ -66,6 +66,7 @@ export const FetchContactData = () => {
                       <p>Name: {item.attributes.firstname}</p>
                     </div>
                     {""}
+
                     <div className="adminContactMessages">
                       <p>Message: {item.attributes.messages}</p>
                     </div>

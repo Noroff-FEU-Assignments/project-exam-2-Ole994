@@ -11,12 +11,7 @@ export const contactSchema = yup.object().shape({
   firstname: yup
     .string()
     .required("please write a valid first name")
-    .min(3, "The last name must be at least 4 characters"),
-
-  lastname: yup
-    .string()
-    .required("please write a valid last name")
-    .min(4, "The last name must be at least 4 characters"),
+    .min(3, "The last name must be at least 3 characters"),
 
   messages: yup
     .string()

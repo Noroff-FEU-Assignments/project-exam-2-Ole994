@@ -10,12 +10,9 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true);
     axios
       .get(BASE_URL + "api/hotels")
       .then((response) => setData(response.data.data));
-
-    setIsLoading(false);
   }, []);
 
   if (isLoading) {

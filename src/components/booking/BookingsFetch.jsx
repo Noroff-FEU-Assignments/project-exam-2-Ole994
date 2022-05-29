@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { BOOKING_PATH } from "../../helpers/api/api";
 import { useContext } from "react";
 import useAxios from "../../hooks/useAxios";
@@ -7,7 +6,7 @@ import AuthContext from "../../context/AuthContext";
 
 const BookingsFetch = () => {
   const [error, setError] = useState();
-  const [isContentExpanded, setIsContentExpanded] = useState(false);
+
   const [bookings, setBookings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [auth] = useContext(AuthContext);
@@ -63,6 +62,7 @@ const BookingsFetch = () => {
                   {""}
                   <div className="bookingResult">
                     <p>Name: {item.attributes.name}</p>
+
                     <p>Checkin: {item.attributes.checkin.substring(0, 10)}</p>
                     <p>Checkout:{item.attributes.checkout.substring(0, 10)}</p>
                     <p>Rooms: {item.attributes.rooms}</p>
