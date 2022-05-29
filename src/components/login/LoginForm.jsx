@@ -31,23 +31,15 @@ const LoginForm = () => {
       password: formData.password,
     });
 
-    console.log("Response Data: ", responseData);
-
-    // Save JWT response to localstorage
     setAuth(responseData.data);
-    // redirect to admin page
+
     navigate("/admin");
   };
 
-  // handleSubmit
   const onSubmit = (formData) => {
-    console.log("Form Data: ", formData);
-
     loginUser(formData).catch(console.error);
-    console.log(auth);
   };
 
-  // Render page
   return (
     <>
       <div className="background-login">
@@ -72,7 +64,9 @@ const LoginForm = () => {
               {errors.password && <p>{errors.password.message}</p>}
             </div>
 
-            <button type="submit">Login</button>
+            <div className="loginButtonFlex">
+              <button type="submit">Login</button>
+            </div>
           </div>
         </form>
       </div>

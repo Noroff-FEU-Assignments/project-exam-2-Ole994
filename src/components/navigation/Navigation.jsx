@@ -4,7 +4,7 @@ import logo from "../../pictures/logo.svg";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import { useContext } from "react";
-import LiveSearchFilter from "../filter/LiveSearchFilter";
+
 const Navigation = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [auth, setAuth] = useContext(AuthContext);
@@ -55,7 +55,7 @@ const Navigation = () => {
               {!auth ? (
                 <Link to={"/login"}>Login</Link>
               ) : (
-                <button className="defaultBtn" onClick={handleLogout}>
+                <button className="defaultBtnNavigation" onClick={handleLogout}>
                   Logout
                 </button>
               )}

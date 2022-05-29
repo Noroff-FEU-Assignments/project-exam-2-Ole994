@@ -1,3 +1,14 @@
+.booking {
+  margin-top: 60px;
+}
+.bookingContainer {
+  height: 100%;
+}
+
+.adminPageHeader {
+  text-align: center;
+}
+
 .gridAdminContent {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

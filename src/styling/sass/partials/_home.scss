@@ -4,7 +4,7 @@
   background-position: center;
   background-size: cover;
   height: 80vh;
-  // position: absolute;
+
   width: 100%;
   top: 0;
 }
@@ -16,7 +16,7 @@
   h1 {
     text-align: center;
     font-size: 60px;
-    // height: 140px;
+
     border-radius: 9px;
     color: white;
     background-color: rgba(0, 0, 0, 0.653);
@@ -50,10 +50,6 @@
 .viewHotels {
   width: 50%;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-}
-
-.restaurantImg {
-  width: 100%;
 }
 
 .containerHome {
@@ -117,9 +113,6 @@
   }
 }
 
-.breakfastContainer {
-}
-
 @media screen and (min-width: 756px) {
   .headerFront {
     h1 {
@@ -130,9 +123,7 @@
   .heroImgFront {
     height: 100vh;
   }
-  .container {
-    // margin-top: 300px;
-  }
+
   .breakfastDescription {
     width: 70%;
     padding: 20px;
@@ -170,20 +161,14 @@
 
   .backgroundBreakfast {
     height: 1200px;
+    max-width: 100%;
   }
   .breakfastDescription {
-    height: 40%;
-    width: 40%;
-
     h2 {
       font-size: 3rem;
     }
     p {
       font-size: 1.8rem;
     }
-  }
-
-  .breakfastContainer {
-    width: 50%;
   }
 }

@@ -27,7 +27,6 @@ const BookingsFetch = () => {
 
   const handleRemoveItem = async (e) => {
     const id = e.target.getAttribute("id");
-    console.log(id);
 
     const deleteItem = await http.delete(`${BOOKING_PATH}/${id}`);
     setNewList(newList.filter((item) => item.id !== id));
@@ -39,7 +38,6 @@ const BookingsFetch = () => {
         <h1>You have to login to wiev the content on this page!</h1>
         <p>Error: {error.status} </p>
         <p>{error.message}</p>
-        <Link to="/login">Login</Link>
       </div>
     );
   }
@@ -49,58 +47,44 @@ const BookingsFetch = () => {
   }
 
   if (!auth) {
-    return (
-      <div className="unLogged">
-        <Link to="/login">
-          {" "}
-          <div className="buttonUnLogged">
-            <button>Please login</button>
-          </div>
-        </Link>
-      </div>
-    );
+    return;
   }
 
   return (
-    <div className="bookingContainer">
-      {/* <h1>Messages {auth.user.userName}</h1> */}
-      <h2>Bookings:</h2>
-      {/* <button
-        onClick={() => {
-          setIsContentExpanded(!setIsContentExpanded);
-        }}
-      >
-        Push
-      </button> */}
-      <div className="booking-hide">
-        {bookings.map((item, idx) => {
-          return (
-            <div key={idx} className="bookingAdminContainer">
-              <div className="bookingAdmin">
-                {""}
-                <div className="bookingResult">
-                  <p>Name: {item.attributes.name}</p>
-                  <p>Checkin: {item.attributes.checkin.substring(0, 10)}</p>
-                  <p>Checkout:{item.attributes.checkout.substring(0, 10)}</p>
-                  <p>Rooms: {item.attributes.rooms}</p>
-                  <p>Adults:{item.attributes.adults}</p>
-                  <p>Children: {item.attributes.children}</p>
-                </div>
-                <div className="deleteButton">
-                  <button
-                    id={item.id}
-                    className="buttonMain"
-                    onClick={handleRemoveItem}
-                  >
-                    DELETE
-                  </button>
+    <>
+      <div className="bookingContainer">
+        <h2>Bookings:</h2>
+
+        <div className="booking">
+          {bookings.map((item, idx) => {
+            return (
+              <div key={idx} className="bookingAdminContainer">
+                <div className="bookingAdmin">
+                  {""}
+                  <div className="bookingResult">
+                    <p>Name: {item.attributes.name}</p>
+                    <p>Checkin: {item.attributes.checkin.substring(0, 10)}</p>
+                    <p>Checkout:{item.attributes.checkout.substring(0, 10)}</p>
+                    <p>Rooms: {item.attributes.rooms}</p>
+                    <p>Adults:{item.attributes.adults}</p>
+                    <p>Children: {item.attributes.children}</p>
+                  </div>
+                  <div className="deleteButton">
+                    <button
+                      id={item.id}
+                      className="buttonMain"
+                      onClick={handleRemoveItem}
+                    >
+                      DELETE
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

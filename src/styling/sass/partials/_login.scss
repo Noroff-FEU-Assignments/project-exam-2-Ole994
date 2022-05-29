@@ -3,7 +3,7 @@
   background-image: url(../../../pictures/bergen-full-img-pixlr.jpg);
   background-position: center;
   background-size: cover;
-  height: 80vh;
+
   display: grid;
   h1 {
     color: white;
@@ -34,7 +34,7 @@
 .loginContainer {
   border: 1px solid white;
   background-color: rgba(0, 0, 0, 0.484);
-  padding: 20px;
+  padding: 30px;
 }
 .input-parent {
   p {
@@ -112,6 +112,9 @@ button:focus {
     height: 400px;
     height: 90%;
     justify-content: space-around;
-    font-size: 30px;
+    font-size: 20px;
+  }
+  .loginButtonFlex {
+    width: 40%;
   }
 }

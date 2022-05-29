@@ -25,14 +25,14 @@ export const BookingForm = ({}) => {
     });
     console.log("After post:", data);
     reset();
-    alert("message sent");
+    alert("Booking made");
   };
   return (
     <>
       <div className="backgroundBooking">
         <div className="bookingWrap">
           <form className="bookingForm" onSubmit={handleSubmit(onFormSubmit)}>
-            <h2>Book your room today</h2>
+            <h1>Book your room today</h1>
 
             <br />
             <input {...register("name")} placeholder="Name" type="text" />

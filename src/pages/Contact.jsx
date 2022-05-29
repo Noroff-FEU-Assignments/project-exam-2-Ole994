@@ -25,7 +25,7 @@ const Contact = () => {
         email: data.email,
       },
     });
-    console.log(responseData);
+
     reset();
     alert("booking sent");
   };
@@ -33,7 +33,7 @@ const Contact = () => {
   return (
     <>
       <div className="container">
-        <h1>Contact</h1>
+        <h1>Contact us</h1>
         <form id="contact" onSubmit={handleSubmit(onSubmit)}>
           <h3>Quick Contact</h3>
           <h4>Contact us today, and get reply with in 24 hours!</h4>

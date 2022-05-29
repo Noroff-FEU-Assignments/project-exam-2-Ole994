@@ -14,7 +14,7 @@ const Result = () => {
   return (
     <>
       <div className="headerResult">
-        <h1>Our hotelrooms</h1>
+        <h1>Our hotels</h1>
       </div>
 
       <div className="containerResult">
@@ -32,10 +32,10 @@ const Result = () => {
                     </div>
                     <div className="textArea">
                       <div className="headingResult">
-                        <h1 className={`headingResult ${attributes.text}`}>
+                        <h2 className={`headingResult ${attributes.text}`}>
                           {" "}
                           {attributes.text}{" "}
-                        </h1>
+                        </h2>
                         {""}
                         <div className="created-at-wrap">
                           <p

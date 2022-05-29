@@ -15,7 +15,7 @@ const Detail = ({ attributes }) => {
       .then((response) => setData(response.data.data.attributes));
     //
   }, [id]);
-  console.log(data);
+
   return (
     <div className="detailContainer">
       {""}

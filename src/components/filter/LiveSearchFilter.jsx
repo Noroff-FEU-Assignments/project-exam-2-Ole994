@@ -12,7 +12,6 @@ export const LiveSearchFilter = () => {
 
   useEffect(() => {
     axios.get(HOTELS_PATH).then((response) => setHotels(response.data.data));
-    console.log(hotels);
   }, [render]);
 
   if (isLoading) {

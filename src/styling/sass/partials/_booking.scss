@@ -3,6 +3,18 @@
   background-position: center;
   background-size: cover;
   padding: 30px;
+
+  h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+.bookingForm {
+  h2 {
+    color: white;
+  }
 }
 
 .bookingWrap {
@@ -35,7 +47,7 @@
 
 .error-message-booking {
   text-align: center;
-
+  margin-top: 20px;
   color: rgb(243, 0, 0);
   padding: 10px;
   width: 70%;

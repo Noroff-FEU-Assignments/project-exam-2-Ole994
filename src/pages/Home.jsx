@@ -73,7 +73,6 @@ const Home = () => {
             })
           : null}
       </div>
-      {/* Data end */}
       <div className="breakfastContainer">
         <div className="backgroundBreakfast">
           <div className="breakfastDescription">
@@ -91,10 +90,3 @@ const Home = () => {
 };
 
 export default Home;
-{
-  /* <div className="parent-container">
-      <div className="image-container-front">
-        <img className="hero-front" src={image} alt="" />
-      </div>
-    </div> */
-}

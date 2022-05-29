@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="inner-footer">
           <div className="footer-items">
             <h1>Holidaze</h1>
-            <p>We are one of the highest ranking hotels in Bergen</p>
+            <p>Our hotels in Bergen have been ranked as one of the best </p>
           </div>
 
           <div className="footer-items">
@@ -50,7 +50,8 @@ const Footer = () => {
             <div className="border1"></div>
             <ul>
               <li>
-                <i className="fa fa-map-marker" aria-hidden="true"></i>XYZ, abc
+                <i className="fa fa-map-marker" aria-hidden="true"></i>Holidaze
+                as
               </li>
               <li>
                 <i className="fa fa-phone" aria-hidden="true"></i>9088866
