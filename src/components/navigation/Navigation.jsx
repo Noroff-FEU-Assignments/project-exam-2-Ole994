@@ -12,8 +12,6 @@ const Navigation = () => {
   const handleLogout = () => {
     setAuth(null);
 
-    // deleteFromLocalstorage("jwt");
-
     navigate("/login");
   };
   return (

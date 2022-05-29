@@ -34,7 +34,7 @@ const BookingsFetch = () => {
   if (error) {
     return (
       <div>
-        <h1>You have to login to wiev the content on this page!</h1>
+        <h1>You have to login to view the content on this page!</h1>
         <p>Error: {error.status} </p>
         <p>{error.message}</p>
       </div>

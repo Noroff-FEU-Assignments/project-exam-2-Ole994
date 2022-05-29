@@ -5,19 +5,11 @@
   margin-bottom: 40px;
 }
 
-// .filterContainer {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   flex-direction: column;
-// }
 .containerResult {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 80px;
   padding: 20px;
-
-  // width: 100%;
 }
 
 .imageContainerResult {
@@ -66,12 +58,5 @@
   flex-direction: column;
   h3 {
     margin-top: 20px;
-  }
-}
-
-@media screen and (min-width: 756px) {
-  .dynamicImagesResult {
-  }
-  .ResultContainer {
   }
 }

@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { BASE_URL } from "../helpers/api/api";
-// import { format } from "fecha";
 import LiveSearchFilter from "../components/filter/LiveSearchFilter";
 
 const Home = () => {

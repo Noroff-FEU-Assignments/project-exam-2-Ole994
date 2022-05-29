@@ -8,15 +8,10 @@ export const LiveSearchFilter = () => {
   const [hotels, setHotels] = useState([]);
   const [searchTerm, setSearchTerm] = useState(true);
   const [render, setRender] = useState();
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     axios.get(HOTELS_PATH).then((response) => setHotels(response.data.data));
   }, [render]);
-
-  if (isLoading) {
-    <h4>loading</h4>;
-  }
 
   const searchFilter = (e) => {
     let filterHotels = hotels.filter((item) => {

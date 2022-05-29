@@ -50,12 +50,3 @@ const Detail = ({ attributes }) => {
 };
 
 export default Detail;
-//       Hotellrommene av denne standaren har en nydelig utsikt over
-// Bergens sjarmerende brygge. Her vil du kunne ligge i en
-// dobbeltseng med myke og gode madrasser, med et nattbord som ligger
-// rett ved stikkontakter for å lade mobiltelefoner eller annet
-// elektroiske komponenter du har med deg på din reise.
-// {""}I tillegg vil du på rommet ha tilgang til en god sofa med
-// stoler hvor du kan se på tv og slappe av. Rommene er også
-// innstalert med vannkoker og stuebord med teppe under. Badet har en
-// stor dusj og dobbel vask, med hårføner lett tilgjengelig.

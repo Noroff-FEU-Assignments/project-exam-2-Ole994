@@ -27,11 +27,10 @@ button {
   width: 200px;
 }
 
-/*/ Desktop nav/*/
 nav {
   display: flex;
   height: 15vh;
-  // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
   position: relative;
   background-color: #516e71;
   z-index: 9;
@@ -97,7 +96,6 @@ nav {
 
   .nav {
     position: absolute;
-    // padding: 2px;
 
     justify-content: flex-end;
   }

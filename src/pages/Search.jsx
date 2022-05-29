@@ -1,9 +1,8 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { POPULATE, BASE_URL } from "../helpers/api/api";
+import { BASE_URL } from "../helpers/api/api";
 
 const Search = () => {
-  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [post, setPosts] = useState([]);
   const [searchTitle, setSearchTitle] = useState("");
