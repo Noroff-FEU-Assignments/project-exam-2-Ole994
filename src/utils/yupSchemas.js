@@ -28,8 +28,8 @@ export const contactSchema = yup.object().shape({
 export const bookingSchemas = yup.object().shape({
   name: yup
     .string()
-    .required("please write a valid first name")
-    .min(2, "The last name must be at least 4 characters"),
+    .required("please write a name")
+    .min(2, "The name must be at least  characters"),
   checkin: yup.date().required("Choose date for check in"),
   checkout: yup.date().nullable().required("Choose date for check out"),
   rooms: yup.string().required("Please pick a room"),
