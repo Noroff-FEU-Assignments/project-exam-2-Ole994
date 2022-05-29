@@ -95,13 +95,9 @@
   background-image: url(../../../pictures/breakfeast.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-
-  // object-fit: cover;
 }
 
 .breakfastDescription {
-  // display: flex;
-  // flex-direction: column;
   background-color: rgba(0, 0, 0, 0.649);
 
   p,
@@ -150,10 +146,15 @@
       font-size: 8rem;
     }
   }
-
+  .readMore {
+    height: 30px;
+    button {
+      height: 50px;
+    }
+  }
   .viewHotels {
     button {
-      font-size: 30px;
+      margin-top: 20px;
     }
   }
 
