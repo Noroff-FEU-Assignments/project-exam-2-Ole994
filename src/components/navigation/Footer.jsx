@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="inner-footer">
           <div className="footer-items">
             <h1>Holidaze</h1>
-            <p>Our hotels in Bergen have been ranked as one of the best </p>
+            <p>We have a lot of hotels in Bergen with high rating score </p>
           </div>
 
           <div className="footer-items">
